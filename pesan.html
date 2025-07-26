@@ -1,54 +1,39 @@
-<!-- pesan.html -->
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pesan Tiket - OshiLive48</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>Pilih Acara - OshiLive48</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 
-  <a href="shop.html" class="back-button">← Kembali ke Halaman Shop</a>
+  <a href="index.html" class="back-button">← Kembali ke Shop</a>
 
   <header class="fade-in">
-    <h1>Formulir Pemesanan</h1>
-    <p>Isi data berikut untuk memesan tiket event pilihanmu!</p>
+    <h1>Pilih Acara Live</h1>
+    <p>Langsung klik acara yang ingin kamu tonton, lalu pilih metode pembayaran.</p>
   </header>
 
-  <div class="form-container fade-in">
-    <form action="konfirmasi.html" method="POST">
-      <label for="nama">Nama Lengkap</label>
-      <input type="text" id="nama" name="nama" required />
+  <div class="acara-list fade-in">
+    <div class="acara-card">
+      <h3>🎤 Theater Reguler - Hari Ini</h3>
+      <p>Waktu: 19.00 WIB</p>
+      <a href="bayar.html?acara=Theater%20Reguler">Pesan Sekarang</a>
+    </div>
 
-      <label for="username">Username Komunitas</label>
-      <input type="text" id="username" name="username" required />
+    <div class="acara-card">
+      <h3>🤝 Handshake Event - Special Member</h3>
+      <p>Waktu: 21.00 WIB</p>
+      <a href="bayar.html?acara=Handshake%20Event">Pesan Sekarang</a>
+    </div>
 
-      <label for="acara">Pilih Acara</label>
-      <select id="acara" name="acara" required>
-        <option value="">-- Pilih Acara --</option>
-        <option value="Teater Reguler">Teater Reguler</option>
-        <option value="Konser Spesial">Konser Spesial</option>
-        <option value="Handshake Event">Handshake Event</option>
-        <option value="Graduation Show">Graduation Show</option>
-      </select>
-
-      <label for="tanggal">Tanggal Acara</label>
-      <input type="date" id="tanggal" name="tanggal" required />
-
-      <label for="pembayaran">Metode Pembayaran</label>
-      <select id="pembayaran" name="pembayaran" required>
-        <option value="">-- Pilih Metode --</option>
-        <option value="Trakteer">Trakteer</option>
-        <option value="QRIS">QRIS</option>
-        <option value="Manual Transfer">Manual Transfer</option>
-      </select>
-
-      <button type="submit">Kirim Pemesanan</button>
-    </form>
+    <div class="acara-card">
+      <h3>🎓 Graduation Show - Final Stage</h3>
+      <p>Waktu: 20.00 WIB</p>
+      <a href="bayar.html?acara=Graduation%20Show">Pesan Sekarang</a>
+    </div>
   </div>
 
   <footer>
