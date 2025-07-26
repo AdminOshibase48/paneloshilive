@@ -332,3 +332,9 @@ form button:hover {
 .back-button-inline:hover {
   background-color: rgba(255,255,255,0.1);
 }
+
+.logo {
+  background-color: rgba(0, 0, 0, 0.4); /* transparan hitam */
+  padding: 6px;
+  border-radius: 8px;
+}
