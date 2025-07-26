@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Konfirmasi - OshiLive48</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script>
+    // Ambil data dari query URL (simulasi karena POST tidak tampil)
+    document.addEventListener("DOMContentLoaded", function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      const acara = urlParams.get("acara") || "Acara Tidak Diketahui";
+      const metode = urlParams.get("metode") || "Metode Tidak Dipilih";
+
+      document.getElementById("acaraNama").textContent = acara;
+      document.getElementById("metodeBayar").textContent = metode;
+    });
+  </script>
+</head>
+<body>
+
+  <a href="shop.html" class="back-button">← Kembali ke Halaman Utama</a>
+
+  <header class="fade-in">
+    <h1>Konfirmasi Pemesanan</h1>
+    <p>Berikut detail pesanan kamu:</p>
+  </header>
+
+  <div class="form-container fade-in" style="text-align: center;">
+    <p><strong>Acara:</strong> <span id="acaraNama">...</span></p>
+    <p><strong>Metode Pembayaran:</strong> <span id="metodeBayar">...</span></p>
+
+    <hr style="margin: 2rem 0; border-color: #444;" />
+
+    <p>📩 Silakan kirim bukti pembayaran ke admin kami:</p>
+    <p><strong>Instagram: <a href="https://instagram.com/oshibase48" target="_blank">@oshibase48</a></strong></p>
+
+    <p>⏳ Setelah diverifikasi, kamu akan diberi akses untuk menonton event.</p>
+
+    <a href="shop.html" style="display: inline-block; margin-top: 2rem; padding: 0.8rem 1.4rem; background-color: var(--vanilla-cream); color: var(--midnight-indigo); border-radius: 10px; text-decoration: none; font-weight: bold;">Kembali ke Shop</a>
+  </div>
+
+  <footer>
+    &copy; 2025 OshiLive48 — Komunitas fans, bukan situs resmi JKT48
+  </footer>
+
+</body>
+</html>
