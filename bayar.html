@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pembayaran - OshiLive48</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script>
+    // Ambil nama acara dari URL
+    document.addEventListener("DOMContentLoaded", function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      const acara = urlParams.get("acara");
+      document.getElementById("namaAcara").textContent = acara || "Acara Tidak Diketahui";
+    });
+  </script>
+</head>
+<body>
+
+  <a href="pesan.html" class="back-button">← Kembali ke Pilih Acara</a>
+
+  <header class="fade-in">
+    <h1>Metode Pembayaran</h1>
+    <p>Acara yang dipilih: <strong id="namaAcara">...</strong></p>
+  </header>
+
+  <div class="form-container fade-in">
+    <form action="konfirmasi.html" method="POST">
+      <input type="hidden" name="acara" id="acaraInput" />
+
+      <label for="metode">Pilih Metode Pembayaran</label>
+      <select id="metode" name="metode" required>
+        <option value="">-- Pilih Metode --</option>
+        <option value="Trakteer">Trakteer</option>
+        <option value="QRIS">QRIS</option>
+        <option value="Manual Transfer">Manual Transfer</option>
+      </select>
+
+      <button type="submit">Lanjut ke Konfirmasi</button>
+    </form>
+  </div>
+
+  <footer>
+    &copy; 2025 OshiLive48 — Komunitas fans, bukan situs resmi JKT48
+  </footer>
+
+  <script>
+    // Isi input hidden untuk kirim data acara
+    document.addEventListener("DOMContentLoaded", function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      const acara = urlParams.get("acara");
+      document.getElementById("acaraInput").value = acara;
+    });
+  </script>
+</body>
+</html>
