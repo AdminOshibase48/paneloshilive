@@ -203,3 +203,50 @@ footer {
   ...
   font-size: 1rem;
 }
+
+.form-container {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: rgba(255,255,255,0.04);
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+form label {
+  text-align: left;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+form input,
+form select {
+  padding: 0.7rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #f1ead8;
+  color: #242d4c;
+}
+
+form button {
+  padding: 0.9rem;
+  background-color: var(--vanilla-cream);
+  color: var(--midnight-indigo);
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background-color: #e7dec6;
+}
