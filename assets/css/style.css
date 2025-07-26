@@ -138,3 +138,68 @@ footer {
     padding: 0.4rem 0.8rem;
   }
 }
+
+.hero {
+  position: relative;
+  width: 100%;
+  max-height: 300px;
+  overflow: hidden;
+}
+
+.hero img {
+  width: 100%;
+  object-fit: cover;
+  opacity: 0.3;
+  filter: grayscale(20%);
+}
+
+.hero .overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.hero .overlay h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.hero .overlay p {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  opacity: 0.8;
+}
+
+/* Section Benefit */
+.benefits {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.benefits h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.benefit-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.benefit-item {
+  background-color: rgba(255,255,255,0.08);
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  min-width: 200px;
+}
+
+/* Pastikan tombol tetap responsif */
+.button-group a {
+  ...
+  font-size: 1rem;
+}
