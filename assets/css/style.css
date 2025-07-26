@@ -295,3 +295,19 @@ form button:hover {
 .acara-card a:hover {
   background-color: #e7dec6;
 }
+
+.shop-header {
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  background-color: rgba(255,255,255,0.02);
+}
+
+.logo-link {
+  text-decoration: none;
+}
+
+.logo {
+  height: 50px;
+  max-width: 100%;
+}
