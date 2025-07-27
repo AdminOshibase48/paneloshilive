@@ -3,42 +3,204 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pilih Acara - OshiLive48</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <title>Pesan Tiket - OshiLive48</title>
   <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #242D4C;
+      color: #F1EAD8;
+    }
+
+    .container {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .card {
+      background-color: #2f3a5d;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      margin-bottom: 2rem;
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .card-content {
+      padding: 1.2rem;
+    }
+
+    .card-title {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-info {
+      margin-bottom: 1rem;
+    }
+
+    .card-price {
+      font-size: 1.1rem;
+      margin: 1rem 0;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.6rem 1rem;
+      background-color: #F1EAD8;
+      color: #242D4C;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.2s ease;
+    }
+
+    .btn:hover {
+      background-color: #e8dcc5;
+    }
+
+    /* MODAL */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.6);
+    }
+
+    .modal-content {
+      background-color: #2f3a5d;
+      margin: 10% auto;
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 500px;
+      color: #F1EAD8;
+      position: relative;
+    }
+
+    .modal h2 {
+      margin-top: 0;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 16px;
+      font-size: 1.5rem;
+      color: #F1EAD8;
+      cursor: pointer;
+    }
+
+    .payment-options button {
+      display: block;
+      width: 100%;
+      margin: 0.5rem 0;
+      background-color: #F1EAD8;
+      color: #242D4C;
+    }
+
+    .whatsapp-btn {
+      background-color: #25D366;
+      color: white;
+      border: none;
+      width: 100%;
+      padding: 0.6rem;
+      border-radius: 6px;
+      font-weight: bold;
+      margin-top: 1rem;
+      cursor: pointer;
+    }
+
+    .whatsapp-btn:hover {
+      background-color: #1da851;
+    }
+
+    @media (max-width: 600px) {
+      .modal-content {
+        width: 90%;
+        margin-top: 30%;
+      }
+    }
+  </style>
 </head>
 <body>
-
-  <a href="index.html" class="back-button">← Kembali ke Shop</a>
-
-  <header class="fade-in">
-    <h1>Pilih Acara Live</h1>
-    <p>Langsung klik acara yang ingin kamu tonton, lalu pilih metode pembayaran.</p>
-  </header>
-
-  <div class="acara-list fade-in">
-    <div class="acara-card">
-      <h3>🎤 Coming soon - OshiLive</h3>
-      <p>Waktu: 19.00 WIB</p>
-      <a href="bayar.html?acara=Theater%20Reguler">Pesan Sekarang</a>
-    </div>
-
-    <div class="acara-card">
-      <h3>🤝 Coming soon - OshiLive</h3>
-      <p>Waktu: 21.00 WIB</p>
-      <a href="bayar.html?acara=Handshake%20Event">Pesan Sekarang</a>
-    </div>
-
-    <div class="acara-card">
-      <h3>🎓 Coming soon - OshiLive</h3>
-      <p>Waktu: 20.00 WIB</p>
-      <a href="bayar.html?acara=Graduation%20Show">Pesan Sekarang</a>
+  <div class="container">
+    <div class="card">
+      <img src="img/Housejkt48.jpg" alt="Full House JKT48">
+      <div class="card-content">
+        <div class="card-title">FULL HOUSE | JKT48 & Friends</div>
+        <div class="card-info">
+          📅 Sabtu, 26 Juli 2025 <br />
+          🕕 18.45 WIB
+        </div>
+        <div class="card-price">💳 Rp 25.000</div>
+        <div class="button-group">
+          <button class="btn" onclick="openModal('info')">ℹ Info</button>
+          <button class="btn" onclick="openModal('beli')">🎟 Beli Streaming</button>
+        </div>
+      </div>
     </div>
   </div>
 
-  <footer>
-    &copy; 2025 OshiLive48 — Komunitas fans perjeketian by Oshibase48
-  </footer>
+  <!-- MODAL INFO -->
+  <div id="modal-info" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('info')">&times;</span>
+      <h2>FULL HOUSE | JKT48 & Friends</h2>
+      <p>
+        Di konser ini, kita akan merayakan momen hadirnya Original Setlist bersama-sama melalui dibawakannya beberapa lagu dari Original Setlist dan juga penampilan spesial dari para composer. Nantikan banyak kejutan yang akan dibawakan!
+      </p>
+      <p><strong>📅 Sabtu, 26 Juli 2025 — 🕕 18.45 WIB</strong></p>
+    </div>
+  </div>
 
+  <!-- MODAL BELI -->
+  <div id="modal-beli" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('beli')">&times;</span>
+      <h2>Metode Pembayaran</h2>
+      <div class="payment-options">
+        <button class="btn">DANA</button>
+        <button class="btn">GoPay</button>
+        <button class="btn">QRIS</button>
+        <button class="btn">Transfer Bank</button>
+      </div>
+      <button class="whatsapp-btn" onclick="kirimWA()">Lanjutkan via WhatsApp</button>
+    </div>
+  </div>
+
+  <script>
+    function openModal(type) {
+      document.getElementById('modal-' + type).style.display = 'block';
+    }
+
+    function closeModal(type) {
+      document.getElementById('modal-' + type).style.display = 'none';
+    }
+
+    function kirimWA() {
+      const waURL = "https://wa.me/6281234567890?text=" + encodeURIComponent(
+        "Halo admin, saya ingin pesan tiket FULL HOUSE | JKT48 & Friends\nMetode pembayaran: [isi di sini]\nNama: [Nama kamu]"
+      );
+      window.open(waURL, '_blank');
+    }
+  </script>
 </body>
 </html>
