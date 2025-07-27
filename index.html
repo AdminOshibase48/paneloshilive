@@ -1,58 +1,59 @@
-<!-- shop.html -->
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OshiLive48 - Pemesanan Nonton</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <title>OshiLive48</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/oshilive-style.css" />
 </head>
 <body>
-<header class="shop-header with-back">
-  <a href="https://oshilive48.netlify.app/" class="logo-link">
-    <img src="img/logo.png" alt="Logo OshiLive48" class="logo" />
-  </a>
-  <a href="http://oshibase48.netlify.app/" class="back-button-inline">← Kembali</a>
-</header>
-
-  <section class="hero-section fade-in">
-  <div class="hero">
-      <img src="img/Housejkt48.jpg" alt="Ilustrasi Teater" />
-      <div class="overlay">
-        <h1>OshiLive48</h1>
-        <p>Pesan tiket nonton teater & event JKT48, cepat dan mudah!</p>
-      </div>
+  <header class="oshilive-header">
+    <div class="logo-container">
+      <img src="img/logo-oshi-live.png" alt="OshiLive48 Logo" class="logo">
+      <h1>OshiLive48</h1>
     </div>
+    <a href="https://oshibase48.netlify.app/" class="back-link">← Kembali ke Oshibase48</a>
   </header>
 
-  <div class="content fade-in">
-    <p>
-      Dibuat oleh fans, untuk fans. Temukan pengalaman nonton yang seru dan bersahabat.  
-      Yuk, bergabung dan dukung oshi-mu dengan cara yang lebih dekat!
-    </p>
-
-    <div class="button-group">
-      <a href="pesan.html">🎟️ Pesan Tiket</a>
-      <a href="jadwal.html">🗓️ Lihat Jadwal</a>
-      <a href="tentang.html">ℹ️ Tentang Kami</a>
+  <section class="hero">
+    <div class="hero-content fade-in">
+      <h2>Streaming Event & Teater JKT48</h2>
+      <p>Dibuat oleh fans, untuk fans. Saksikan acara favoritmu langsung dari rumah!</p>
+      <div class="hero-buttons">
+        <a href="pesan.html" class="btn btn-primary">🎟 Beli Streaming</a>
+        <a href="jadwal.html" class="btn btn-secondary">🗓 Lihat Jadwal</a>
+      </div>
     </div>
-  </div>
-
-  <section class="benefits fade-in">
-    <h2>Kenapa harus OshiLive48?</h2>
-    <div class="benefit-grid">
-      <div class="benefit-item">⚡ Proses pemesanan cepat</div>
-      <div class="benefit-item">❤️ Komunitas fans solid</div>
-      <div class="benefit-item">🎬 Banyak pilihan acara</div>
+    <div class="hero-image">
+      <img src="img/housejkt48.jpg" alt="Teater JKT48">
     </div>
   </section>
 
-  <footer>
+  <section class="event-highlight fade-in">
+    <h3>🎬 Highlight Event Terdekat</h3>
+    <div class="event-cards">
+      <div class="event-card">
+        <img src="img/fullhouse.jpg" alt="FULL HOUSE">
+        <div class="event-info">
+          <h4>FULL HOUSE | 🔴 Live</h4>
+          <p>Sabtu, 26 Juli - 18:45 WIB</p>
+          <div class="buttons">
+            <button class="btn-info">ℹ Info</button>
+            <button class="btn-beli">🎟 Beli</button>
+          </div>
+        </div>
+      </div>
+      <!-- Tambah card lain jika perlu -->
+    </div>
+  </section>
+
+  <footer class="oshilive-footer">
     &copy; 2025 OshiLive48 — Komunitas fans perjeketian by Oshibase48
   </footer>
 
+  <script>
+    // Tambahan animasi fade-in atau lainnya nanti bisa disisipkan di sini
+  </script>
 </body>
 </html>
