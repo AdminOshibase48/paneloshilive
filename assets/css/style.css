@@ -357,3 +357,158 @@ main ul {
 main ul li {
   margin-bottom: 0.6rem;
 }
+
+:root {
+  --dark-bg: #242D4C;
+  --light-text: #F1EAD8;
+  --card-bg: #2f3a5d;
+  --btn-bg: #F1EAD8;
+  --btn-text: #242D4C;
+  --btn-hover: #e8dcc5;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--dark-bg);
+  color: var(--light-text);
+}
+
+a {
+  color: var(--light-text);
+  text-decoration: none;
+}
+
+.container {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  margin-bottom: 2rem;
+  animation: fade-in 0.8s ease;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card-content {
+  padding: 1.2rem;
+}
+
+.card-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.card-info {
+  margin-bottom: 1rem;
+}
+
+.card-price {
+  font-size: 1.1rem;
+  margin: 1rem 0;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.6rem 1rem;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s ease;
+}
+
+.btn:hover {
+  background-color: var(--btn-hover);
+}
+
+/* Modal */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background-color: var(--card-bg);
+  margin: 10% auto;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 500px;
+  color: var(--light-text);
+  position: relative;
+}
+
+.modal h2 {
+  margin-top: 0;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  font-size: 1.5rem;
+  color: var(--light-text);
+  cursor: pointer;
+}
+
+.payment-options button {
+  display: block;
+  width: 100%;
+  margin: 0.5rem 0;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+}
+
+.whatsapp-btn {
+  background-color: #25D366;
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 6px;
+  font-weight: bold;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.whatsapp-btn:hover {
+  background-color: #1da851;
+}
+
+@media (max-width: 600px) {
+  .modal-content {
+    width: 90%;
+    margin-top: 30%;
+  }
+}
+
+/* Animasi */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
