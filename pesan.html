@@ -1,63 +1,67 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Show Streaming - oshilive48</title>
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>oshilive48 - Show Streaming</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body class="dark-mode">
+<body class="dark">
   <header>
-    <a href="https://oshilive48.netlify.app/" class="logo">oshilive48</a>
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Schedule</a></li>
-        <li><a href="#">Membership</a></li>
-        <li><a href="#">Payments</a></li>
-      </ul>
-    </nav>
-    <button id="toggle-mode">Toggle Mode</button>
+    <div class="container header-content">
+      <a href="https://oshilive48.netlify.app/" class="logo">oshilive48</a>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Schedule</a></li>
+          <li><a href="#">Membership</a></li>
+          <li><a href="#">Payments</a></li>
+        </ul>
+      </nav>
+      <button id="toggleMode">🌓</button>
+    </div>
   </header>
 
-  <main>
+  <main class="container">
     <h1>📺 Show Streaming <span class="highlight">JKT48</span></h1>
-    <p>Daftar jadwal show yang akan tayang dan streaming di Platform oshilive48</p>
+    <p class="subtitle">Daftar jadwal show yang akan tayang dan streaming di Platform oshilive48</p>
 
-    <div class="show-card">
-      <img src="show1.png" alt="Ingin Bertemu Show" />
-      <div class="show-info">
+    <div class="card">
+      <img src="assets/show1.png" alt="Ingin Bertemu">
+      <div class="card-content">
         <h2>Ingin Bertemu</h2>
-        <p>📅 Sabtu, 16 Agustus 2025<br>⏰ 19:00 WIB</p>
+        <p class="date">📅 Sabtu, 16 Agustus 2025 | ⏰ 19:00 WIB</p>
         <p>Manis dan pahitnya sebuah pertemuan akan dapat kalian rasakan melalui pertunjukan "Ingin Bertemu".</p>
         <p class="price">Rp 10.000</p>
-        <button class="btn-primary">🎟️ Beli Streaming</button>
+        <button class="btn">🎟️ Beli Streaming</button>
       </div>
     </div>
 
-    <div class="show-card">
-      <img src="show2.png" alt="Full House Show" />
-      <div class="show-info">
+    <div class="card">
+      <img src="assets/show2.png" alt="FULL HOUSE | JKT48 & Friends">
+      <div class="card-content">
         <h2>FULL HOUSE | JKT48 & Friends</h2>
-        <p>📅 Sabtu, 26 Juli 2025<br>⏰ 18:45 WIB</p>
-        <p>Di konser ini, kita akan merayakan momen hadirnya Original Setlist dengan lagu-lagu spesial dan penampilan dari para composer.</p>
+        <p class="date">📅 Sabtu, 26 Juli 2025 | ⏰ 18.45 WIB</p>
+        <p>Di konser ini, kita akan merayakan momen hadirnya Original Setlist dan penampilan spesial dari para composer. Nantikan banyak kejutan!</p>
         <p class="price">Rp 25.000</p>
-        <button class="btn-primary">🎟️ Beli Streaming</button>
+        <button class="btn">🎟️ Beli Streaming</button>
       </div>
     </div>
   </main>
 
   <footer>
-    <p>&copy; 2025 oshilive48. All Rights Reserved.</p>
+    <div class="container">
+      <p>&copy; 2025 oshilive48. All Rights Reserved.</p>
+    </div>
   </footer>
 
   <script>
-    const toggleButton = document.getElementById('toggle-mode');
+    const toggleBtn = document.getElementById("toggleMode");
     const body = document.body;
 
-    toggleButton.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-      body.classList.toggle('light-mode');
+    toggleBtn.addEventListener("click", () => {
+      body.classList.toggle("dark");
+      body.classList.toggle("light");
     });
   </script>
 </body>
