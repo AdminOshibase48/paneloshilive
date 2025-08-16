@@ -2,58 +2,54 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>OshiLive48</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-<body>
-  <header class="oshilive-header">
-    <div class="logo-container">
-      <img src="img/logo.png" alt="OshiLive48 Logo" class="logo">
-      <h1>OshiLive48</h1>
+<body class="dark">
+
+  <!-- HEADER -->
+  <header class="main-header">
+    <div class="container header-flex">
+      <div class="logo-area">
+        <img src="assets/img/logo.png" alt="Logo" class="logo-img">
+        <h1 class="logo-text">OshiLive48</h1>
+      </div>
+      <a href="#" class="back-link">← Kembali ke Oshibase48</a>
     </div>
-    <a href="https://oshibase48.netlify.app/" class="back-link">← Kembali ke Oshibase48</a>
   </header>
 
+  <!-- HERO SECTION -->
   <section class="hero">
-    <div class="hero-content fade-in">
-      <h2>Streaming Event & Teater JKT48</h2>
-      <p>Dibuat oleh fans, untuk fans. Saksikan acara favoritmu langsung dari rumah!</p>
-      <div class="hero-buttons">
-        <a href="pesan.html" class="btn btn-primary">🎟 Beli Streaming</a>
-        <a href="jadwal.html" class="btn btn-secondary">🗓 Lihat Jadwal</a>
-      </div>
-    </div>
-    <div class="hero-image">
-      <img src="img/Housejkt48.jpg" alt="Teater JKT48">
-    </div>
-  </section>
-
-  <section class="event-highlight fade-in">
-    <h3>🎬 Highlight Event Terdekat</h3>
-    <div class="event-cards">
-      <div class="event-card">
-        <img src="img/Housejkt48.jpg" alt="FULL HOUSE">
-        <div class="event-info">
-          <h4>FULL HOUSE | 🔴 Live</h4>
-          <p>Sabtu, 26 Juli - 18:45 WIB</p>
-          <div class="buttons">
-            <button class="btn-info">ℹ Info</button>
-            <button class="btn-beli">🎟 Beli</button>
-          </div>
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h2>Streaming Event & Teater <span class="highlight">JKT48</span></h2>
+        <p>Dibuat oleh fans, untuk fans. Saksikan acara favoritmu langsung dari rumah!</p>
+        <div class="hero-buttons">
+          <a href="#event" class="btn primary">🎟️ Beli Streaming</a>
+          <a href="#jadwal" class="btn secondary">📅 Lihat Jadwal</a>
         </div>
       </div>
-      <!-- Tambah card lain jika perlu -->
+      <div class="hero-image">
+        <img src="assets/img/fullhouse.jpg" alt="Full House JKT48">
+      </div>
     </div>
   </section>
 
-  <footer class="oshilive-footer">
-    &copy; 2025 OshiLive48 — Komunitas fans perjeketian by Oshibase48
+  <!-- HIGHLIGHT -->
+  <section class="highlight-section" id="event">
+    <div class="container">
+      <h3>🪄 Highlight Event Terdekat</h3>
+      <img src="assets/img/fullhouse.jpg" alt="Event Highlight" class="highlight-img">
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 OshiLive48. All Rights Reserved.</p>
+    </div>
   </footer>
 
-  <script>
-    // Tambahan animasi fade-in atau lainnya nanti bisa disisipkan di sini
-  </script>
 </body>
 </html>
