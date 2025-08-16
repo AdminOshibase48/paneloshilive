@@ -10,7 +10,7 @@
   <header>
     <div class="container header-content">
       <div class="logo-container">
-        <img src="assets/img/logo.png" alt="oshilive48 logo" class="logo-img" />
+        <img src="assets/img/logo.png" alt="Logo oshilive48" class="logo-img" />
         <a href="https://oshilive48.netlify.app/" class="logo-text">oshilive48</a>
       </div>
       <nav>
@@ -29,7 +29,7 @@
     <h1>📺 Show Streaming <span class="highlight">JKT48</span></h1>
     <p class="subtitle">Daftar jadwal show yang akan tayang dan streaming di Platform oshilive48</p>
 
-    <!-- Card 1 -->
+    <!-- Card -->
     <div class="card">
       <img src="https://res.cloudinary.com/haymzm4wp/image/upload/v1746940686/gnzangtum7a8ygmk8hvj.jpg" alt="Ingin Bertemu">
       <div class="card-content">
@@ -41,40 +41,28 @@
       </div>
     </div>
 
-    <!-- Card 2 -->
-    <div class="card">
-      <img src="img/Housejkt48.jpg" alt="FULL HOUSE | JKT48 & Friends">
-      <div class="card-content">
-        <h2>FULL HOUSE | JKT48 & Friends</h2>
-        <p class="date">📅 Sabtu, 26 Juli 2025 | ⏰ 18:45 WIB</p>
-        <p>Di konser ini, kita akan merayakan momen hadirnya Original Setlist dan penampilan spesial dari para composer. Nantikan banyak kejutan!</p>
-        <p class="price">Rp 25.000</p>
-        <button class="btn" onclick="showPopup('FULL HOUSE', 'Rp 25.000')">🎟️ Beli Streaming</button>
+    <!-- Popup -->
+    <div class="popup" id="paymentPopup">
+      <div class="popup-content">
+        <span class="close-btn" onclick="closePopup()">✖</span>
+        <h3>Metode Pembayaran</h3>
+        <p id="popupShowTitle"></p>
+        <p id="popupPrice"></p>
+        <form action="konfirmasi.html" method="GET">
+          <label for="method">Pilih metode:</label>
+          <select name="metode" id="method" required>
+            <option value="qris">QRIS</option>
+            <option value="gopay">GoPay</option>
+            <option value="dana">DANA</option>
+            <option value="ovo">OVO</option>
+          </select>
+          <input type="hidden" name="judul" id="formJudul">
+          <input type="hidden" name="harga" id="formHarga">
+          <button type="submit" class="btn">Lanjut ke Konfirmasi</button>
+        </form>
       </div>
     </div>
   </main>
-
-  <!-- Pop-up pembayaran -->
-  <div class="popup" id="paymentPopup">
-    <div class="popup-content">
-      <span class="close-btn" onclick="closePopup()">✖</span>
-      <h3>Metode Pembayaran</h3>
-      <p id="popupShowTitle"></p>
-      <p id="popupPrice"></p>
-      <form action="konfirmasi.html" method="GET">
-        <label for="method">Pilih metode:</label>
-        <select name="metode" id="method" required>
-          <option value="qris">QRIS</option>
-          <option value="gopay">GoPay</option>
-          <option value="dana">DANA</option>
-          <option value="ovo">OVO</option>
-        </select>
-        <input type="hidden" name="judul" id="formJudul">
-        <input type="hidden" name="harga" id="formHarga">
-        <button type="submit" class="btn">Lanjut ke Konfirmasi</button>
-      </form>
-    </div>
-  </div>
 
   <footer>
     <div class="container">
@@ -92,7 +80,7 @@
     });
 
     function showPopup(title, price) {
-      document.getElementById("paymentPopup").style.display = "block";
+      document.getElementById("paymentPopup").style.display = "flex";
       document.getElementById("popupShowTitle").textContent = `Judul: ${title}`;
       document.getElementById("popupPrice").textContent = `Harga: ${price}`;
       document.getElementById("formJudul").value = title;
