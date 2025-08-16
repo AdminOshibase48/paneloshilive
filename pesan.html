@@ -3,83 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pesan Tiket - OshiLive48</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <title>OshiLive48 - Info Acara</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="shop-header">
-    <a href="https://oshibase48.netlify.app/" class="logo-link">
-      <img src="img/logo.png" alt="OshiLive48" />
+  <header>
+    <a href="index.html" class="logo">
+      <img src="logo-oshilive48.png" alt="OshiLive48 Logo" />
+      <span>OshiLive48</span>
     </a>
+    <div class="burger" onclick="alert('Menu akan datang!')">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
   </header>
 
-  <div class="container">
-    <h2>Daftar Acara Streaming</h2>
-
-    <div class="event-grid">
-      <!-- EVENT CARD -->
-      <div class="card">
-        <img src="img/Housejkt48.jpg" alt="Full House JKT48" />
-        <div class="card-content">
-          <div class="card-title">FULL HOUSE | JKT48 & Friends</div>
-          <div class="card-info">📅 Sabtu, 26 Juli 2025 — 🕕 18.45 WIB</div>
-          <div class="card-price">💳 Rp 25.000</div>
-          <div class="button-group">
-            <button class="btn" onclick="openModal('info')">ℹ Info</button>
-            <button class="btn" onclick="openModal('beli')">🎟 Beli Streaming</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tambahkan event lain di sini jika perlu -->
-    </div>
-  </div>
-
-  <!-- MODAL INFO -->
-  <div id="modal-info" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('info')">&times;</span>
-      <h3>FULL HOUSE | JKT48 & Friends</h3>
+  <main>
+    <div class="info-card">
+      <h2>FULL HOUSE | JKT48 & Friends</h2>
       <p>
         Di konser ini, kita akan merayakan momen hadirnya Original Setlist bersama-sama melalui dibawakannya beberapa lagu dari Original Setlist dan juga penampilan spesial dari para composer. Nantikan banyak kejutan!
       </p>
-      <p><strong>📅 Sabtu, 26 Juli 2025 — 🕕 18.45 WIB</strong></p>
+      <div class="date-time">
+        <div><i>📅</i> Sabtu, 26 Juli 2025</div>
+        <div><i>⏰</i> 18.45 WIB</div>
+      </div>
     </div>
-  </div>
+  </main>
 
-  <!-- MODAL BELI -->
-  <div id="modal-beli" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('beli')">&times;</span>
-      <h3>Metode Pembayaran</h3>
-      <ul style="padding-left: 1rem; font-size: 0.9rem;">
-        <li>DANA</li>
-        <li>GoPay</li>
-        <li>QRIS</li>
-        <li>Transfer Bank</li>
-      </ul>
-      <button class="whatsapp-btn" onclick="kirimWA()">Lanjutkan via WhatsApp</button>
-    </div>
-  </div>
-
-  <!-- JS Modal -->
-  <script>
-    function openModal(type) {
-      document.getElementById('modal-' + type).style.display = 'block';
-    }
-
-    function closeModal(type) {
-      document.getElementById('modal-' + type).style.display = 'none';
-    }
-
-    function kirimWA() {
-      const waURL = "https://wa.me/6281234567890?text=" + encodeURIComponent(
-        "Halo admin, saya ingin pesan tiket FULL HOUSE | JKT48 & Friends\nMetode pembayaran: [isi di sini]\nNama: [Nama kamu]"
-      );
-      window.open(waURL, '_blank');
-    }
-  </script>
 </body>
 </html>
