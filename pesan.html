@@ -2,37 +2,63 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OshiLive48 - Info Acara</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Show Streaming - oshilive48</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-
+<body class="dark-mode">
   <header>
-    <a href="index.html" class="logo">
-      <img src="logo-oshilive48.png" alt="OshiLive48 Logo" />
-      <span>OshiLive48</span>
-    </a>
-    <div class="burger" onclick="alert('Menu akan datang!')">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
+    <a href="https://oshilive48.netlify.app/" class="logo">oshilive48</a>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Schedule</a></li>
+        <li><a href="#">Membership</a></li>
+        <li><a href="#">Payments</a></li>
+      </ul>
+    </nav>
+    <button id="toggle-mode">Toggle Mode</button>
   </header>
 
   <main>
-    <div class="info-card">
-      <h2>FULL HOUSE | JKT48 & Friends</h2>
-      <p>
-        Di konser ini, kita akan merayakan momen hadirnya Original Setlist bersama-sama melalui dibawakannya beberapa lagu dari Original Setlist dan juga penampilan spesial dari para composer. Nantikan banyak kejutan!
-      </p>
-      <div class="date-time">
-        <div><i>📅</i> Sabtu, 26 Juli 2025</div>
-        <div><i>⏰</i> 18.45 WIB</div>
+    <h1>📺 Show Streaming <span class="highlight">JKT48</span></h1>
+    <p>Daftar jadwal show yang akan tayang dan streaming di Platform oshilive48</p>
+
+    <div class="show-card">
+      <img src="show1.png" alt="Ingin Bertemu Show" />
+      <div class="show-info">
+        <h2>Ingin Bertemu</h2>
+        <p>📅 Sabtu, 16 Agustus 2025<br>⏰ 19:00 WIB</p>
+        <p>Manis dan pahitnya sebuah pertemuan akan dapat kalian rasakan melalui pertunjukan "Ingin Bertemu".</p>
+        <p class="price">Rp 10.000</p>
+        <button class="btn-primary">🎟️ Beli Streaming</button>
+      </div>
+    </div>
+
+    <div class="show-card">
+      <img src="show2.png" alt="Full House Show" />
+      <div class="show-info">
+        <h2>FULL HOUSE | JKT48 & Friends</h2>
+        <p>📅 Sabtu, 26 Juli 2025<br>⏰ 18:45 WIB</p>
+        <p>Di konser ini, kita akan merayakan momen hadirnya Original Setlist dengan lagu-lagu spesial dan penampilan dari para composer.</p>
+        <p class="price">Rp 25.000</p>
+        <button class="btn-primary">🎟️ Beli Streaming</button>
       </div>
     </div>
   </main>
 
+  <footer>
+    <p>&copy; 2025 oshilive48. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    const toggleButton = document.getElementById('toggle-mode');
+    const body = document.body;
+
+    toggleButton.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      body.classList.toggle('light-mode');
+    });
+  </script>
 </body>
 </html>
