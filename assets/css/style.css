@@ -1063,7 +1063,6 @@ footer {
   opacity: 0.7;
 }
 
-/* GENERAL RESET */
 * {
   margin: 0;
   padding: 0;
@@ -1119,7 +1118,7 @@ header {
 nav ul {
   list-style: none;
   display: flex;
-  gap: 1.2rem;
+  gap: 1rem;
 }
 
 nav a {
@@ -1140,6 +1139,7 @@ nav a {
 main h1 {
   margin-top: 2rem;
   font-size: 2rem;
+  font-weight: bold;
 }
 
 .highlight {
@@ -1186,6 +1186,10 @@ main h1 {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  margin-top: 1rem;
+  display: inline-block;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
 .btn:hover {
@@ -1213,6 +1217,7 @@ main h1 {
   width: 90%;
   max-width: 400px;
   position: relative;
+  color: #fff;
 }
 
 .popup-content h3 {
@@ -1237,14 +1242,4 @@ main h1 {
   top: 10px;
   right: 15px;
   font-size: 1.2rem;
-  cursor: pointer;
-  color: #fff;
-}
-
-/* FOOTER */
-footer {
-  padding: 1rem 0;
-  text-align: center;
-  background-color: #1e1e1e;
-  color: #aaa;
-}
+ 
