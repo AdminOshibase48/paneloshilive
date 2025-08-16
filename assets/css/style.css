@@ -1243,3 +1243,10 @@ main h1 {
   right: 15px;
   font-size: 1.2rem;
  
+.btn {
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  display: inline-block;
+}
