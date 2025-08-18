@@ -1,0 +1,33 @@
+<div class="pricing-plans">
+  <!-- Paket Basic -->
+  <div class="plan">
+    <h3>Basic</h3>
+    <p class="price">Rp50.000<span>/bulan</span></p>
+    <ul>
+      <li>✔ Akses 1 Device</li>
+      <li>✔ Kualitas HD</li>
+    </ul>
+    <button onclick="buyMembership('basic')">Beli Sekarang</button>
+  </div>
+  
+  <!-- Paket Premium -->
+  <div class="plan recommended">
+    <h3>Premium</h3>
+    <p class="price">Rp100.000<span>/bulan</span></p>
+    <ul>
+      <li>✔ Akses 2 Device</li>
+      <li>✔ Kualitas FHD</li>
+    </ul>
+    <button onclick="buyMembership('premium')">Pilihan Populer</button>
+  </div>
+</div>
+
+<script>
+function buyMembership(plan) {
+  // Simpan pilihan paket
+  localStorage.setItem('selectedPlan', plan);
+  
+  // Redirect ke halaman pembayaran
+  window.location.href = "payment.html";
+}
+</script>
