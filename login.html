@@ -71,3 +71,27 @@
     <script src="assets/css/login.js"></script>
 </body>
 </html>
+<form id="loginForm">
+  <input type="text" id="username" placeholder="Username" required>
+  <input type="password" id="password" placeholder="Password" required>
+  <button type="submit">Login</button>
+</form>
+
+<script>
+  document.getElementById("loginForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    
+    // Cek credentials sederhana
+    if(document.getElementById("username").value === "admin" && 
+       document.getElementById("password").value === "jkt48") {
+      
+      // Simpan status login di localStorage
+      localStorage.setItem("isLoggedIn", "true");
+      
+      // Redirect ke dashboard
+      window.location.href = "streaming.html";
+    } else {
+      alert("Login gagal! Coba lagi.");
+    }
+  });
+</script>a
