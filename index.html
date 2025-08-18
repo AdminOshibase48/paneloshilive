@@ -6,49 +6,88 @@ a<!DOCTYPE html>
     <title>OshiLive48 - Streaming Theater JKT48</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <h1>OshiLive48</h1>
+    <div class="loading-screen">
+        <div class="spinner"></div>
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo" data-aos="fade-down">
+                <h1>OshiLive48</h1>
+            </div>
+            <nav class="navbar" data-aos="fade-down">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#schedule">Schedule</a></li>
+                    <li><a href="#membership">Membership</a></li>
+                    <li><a href="#payments">Payments</a></li>
+                    <li><a href="#primes">Primes</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#schedule">Schedule</a></li>
-                <li><a href="#membership">Membership</a></li>
-                <li><a href="#payments">Payments</a></li>
-                <li><a href="#primes">Primes</a></li>
-            </ul>
-        </nav>
     </header>
 
-    <main>
-        <section id="hero">
+    <section id="home" class="hero">
+        <div class="hero-bg-animation"></div>
+        <div class="container">
             <div class="hero-content">
-                <div class="hero-text">
+                <div class="hero-text" data-aos="fade-right" data-aos-delay="300">
                     <h2>OshiLive48 OFFICIAL</h2>
                     <p>OshiLive48 adalah platform streaming pihak ketiga tidak resmi yang menyediakan akses ke streaming Theater JKT48 dengan harga terjangkau dan kualitas yang sesuai.</p>
                     <div class="hero-buttons">
-                        <a href="#membership" class="btn-primary">Mulai Menonton →</a>
-                        <a href="#faq" class="btn-secondary">📌 Lihat FAQ</a>
+                        <a href="#membership" class="btn btn-primary">Mulai Menonton →</a>
+                        <a href="#faq" class="btn btn-outline">📌 Lihat FAQ</a>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <img src="img/Housejkt48.jpg" alt="JKT48 Theater">
+                <div class="hero-image" data-aos="fade-left" data-aos-delay="500">
+                    <img src="assets/images/hero-image.png" alt="JKT48 Theater" class="img-fluid floating">
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Tambahkan section lainnya di sini -->
-    </main>
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Layanan Kami</h2>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h3>Streaming HD</h3>
+                    <p>Kualitas streaming Full HD tanpa buffering</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Jadwal Lengkap</h3>
+                    <p>Jadwal pertunjukan theater yang terupdate</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3>Komunitas</h3>
+                    <p>Komunitas penggemar JKT48 yang aktif</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <footer>
-        <div class="footer-content">
+    <footer class="footer">
+        <div class="container">
             <p>&copy; 2023 OshiLive48. Tidak berafiliasi dengan JKT48.</p>
         </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/css/script.js"></script>
 </body>
 </html>
