@@ -119,3 +119,104 @@ faqQuestions.forEach(question => {
 
 // Set current year in footer
 document.querySelector('.footer-bottom').innerHTML += ' &copy; ' + new Date().getFullYear();
+
+// Schedule Navigation
+const prevWeekBtn = document.querySelector('.prev-week');
+const nextWeekBtn = document.querySelector('.next-week');
+const currentWeekEl = document.querySelector('.current-week');
+
+let currentDate = new Date();
+
+function updateWeekDisplay() {
+    const startOfWeek = new Date(currentDate);
+    startOfWeek.setDate(currentDate.getDate() - currentDate.getDay() + 1); // Start from Monday
+    
+    const endOfWeek = new Date(startOfWeek);
+    endOfWeek.setDate(startOfWeek.getDate() + 6);
+    
+    const options = { month: 'short', day: 'numeric' };
+    const startDate = startOfWeek.toLocaleDateString('id-ID', { day: 'numeric', month: 'short' }).replace(' ', ' ');
+    const endDate = endOfWeek.toLocaleDateString('id-ID', { day: 'numeric', month: 'short' }).replace(' ', ' ');
+    
+    currentWeekEl.textContent = `Minggu ${startDate}-${endDate} ${currentDate.getFullYear()}`;
+    
+    // Update day dates in schedule
+    document.querySelectorAll('.day-column').forEach((column, index) => {
+        const dayDate = new Date(startOfWeek);
+        dayDate.setDate(startOfWeek.getDate() + index);
+        
+        const dateEl = column.querySelector('.day-date');
+        dateEl.textContent = dayDate.toLocaleDateString('id-ID', { day: 'numeric', month: 'short' }).replace(' ', ' ');
+    });
+}
+
+prevWeekBtn.addEventListener('click', function() {
+    currentDate.setDate(currentDate.getDate() - 7);
+    updateWeekDisplay();
+});
+
+nextWeekBtn.addEventListener('click', function() {
+    currentDate.setDate(currentDate.getDate() + 7);
+    updateWeekDisplay();
+});
+
+// Initialize
+updateWeekDisplay();
+
+// Update event statuses based on current time
+function updateEventStatuses() {
+    const now = new Date();
+    
+    document.querySelectorAll('.event-card').forEach(card => {
+        const timeStr = card.querySelector('.event-time').textContent;
+        const [hours, minutes] = timeStr.split(':').map(Number);
+        
+        // Create date object for today with this event's time
+        const eventDate = new Date();
+        eventDate.setHours(hours, minutes, 0, 0);
+        
+        // Compare with current time
+        const timeDiff = (now - eventDate) / (1000 * 60); // Difference in minutes
+        
+        const statusEl = card.querySelector('.event-status');
+        
+        if (timeDiff >= 0 && timeDiff < 120) { // Event is live (within 2 hours)
+            statusEl.textContent = 'LIVE';
+            statusEl.className = 'event-status live';
+            card.style.borderLeft = '3px solid #e74c3c';
+        } else if (timeDiff < 0) { // Event is upcoming
+            statusEl.textContent = 'UPCOMING';
+            statusEl.className = 'event-status upcoming';
+            card.style.borderLeft = '3px solid #1976d2';
+        } else { // Event has ended
+            statusEl.textContent = 'ENDED';
+            statusEl.className = 'event-status ended';
+            card.style.borderLeft = '3px solid #777';
+        }
+    });
+}
+
+// Update statuses initially and every minute
+updateEventStatuses();
+setInterval(updateEventStatuses, 60000);
+
+// Reminder Button Functionality
+document.querySelectorAll('.btn-reminder').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const eventCard = this.closest('.event-card');
+        const eventTitle = eventCard.querySelector('.event-title').textContent;
+        const eventTime = eventCard.querySelector('.event-time').textContent;
+        
+        // Toggle reminder state
+        if (this.classList.contains('active')) {
+            this.classList.remove('active');
+            this.innerHTML = '<i class="fas fa-bell"></i>';
+            alert(`Reminder untuk "${eventTitle}" pada ${eventTime} dibatalkan`);
+        } else {
+            this.classList.add('active');
+            this.innerHTML = '<i class="fas fa-bell-slash"></i>';
+            alert(`Reminder untuk "${eventTitle}" pada ${eventTime} diaktifkan`);
+        }
+    });
+});
