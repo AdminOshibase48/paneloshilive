@@ -1,33 +1,68 @@
-<div class="pricing-plans">
-  <!-- Paket Basic -->
-  <div class="plan">
-    <h3>Basic</h3>
-    <p class="price">Rp50.000<span>/bulan</span></p>
-    <ul>
-      <li>✔ Akses 1 Device</li>
-      <li>✔ Kualitas HD</li>
-    </ul>
-    <button onclick="buyMembership('basic')">Beli Sekarang</button>
-  </div>
-  
-  <!-- Paket Premium -->
-  <div class="plan recommended">
-    <h3>Premium</h3>
-    <p class="price">Rp100.000<span>/bulan</span></p>
-    <ul>
-      <li>✔ Akses 2 Device</li>
-      <li>✔ Kualitas FHD</li>
-    </ul>
-    <button onclick="buyMembership('premium')">Pilihan Populer</button>
-  </div>
-</div>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paket Membership - OshiLive48</title>
+    <link rel="stylesheet" href="assets/css/pricing.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="pricing-header">
+        <h1><i class="fas fa-crown"></i> PAKET MEMBERSHIP</h1>
+        <p>Pilih paket yang sesuai dengan kebutuhan Anda</p>
+    </div>
 
-<script>
-function buyMembership(plan) {
-  // Simpan pilihan paket
-  localStorage.setItem('selectedPlan', plan);
-  
-  // Redirect ke halaman pembayaran
-  window.location.href = "payment.html";
-}
-</script>
+    <div class="pricing-container">
+        <!-- Paket Basic -->
+        <div class="pricing-plan">
+            <div class="plan-header">
+                <h3>BASIC</h3>
+                <div class="price">Rp50.000<span>/bulan</span></div>
+            </div>
+            <ul class="plan-features">
+                <li><i class="fas fa-check"></i> Akses 1 Device</li>
+                <li><i class="fas fa-check"></i> Kualitas HD</li>
+                <li><i class="fas fa-times"></i> Rekaman Show</li>
+            </ul>
+            <button class="plan-button" onclick="selectPlan('basic')">Pilih Paket</button>
+        </div>
+
+        <!-- Paket Premium -->
+        <div class="pricing-plan popular">
+            <div class="popular-badge">POPULER</div>
+            <div class="plan-header">
+                <h3>PREMIUM</h3>
+                <div class="price">Rp100.000<span>/bulan</span></div>
+            </div>
+            <ul class="plan-features">
+                <li><i class="fas fa-check"></i> Akses 2 Device</li>
+                <li><i class="fas fa-check"></i> Kualitas FHD</li>
+                <li><i class="fas fa-check"></i> Rekaman Show</li>
+            </ul>
+            <button class="plan-button" onclick="selectPlan('premium')">Pilih Paket</button>
+        </div>
+
+        <!-- Paket VIP -->
+        <div class="pricing-plan">
+            <div class="plan-header">
+                <h3>VIP</h3>
+                <div class="price">Rp200.000<span>/bulan</span></div>
+            </div>
+            <ul class="plan-features">
+                <li><i class="fas fa-check"></i> Akses 4 Device</li>
+                <li><i class="fas fa-check"></i> Kualitas 4K</li>
+                <li><i class="fas fa-check"></i> Bonus Content</li>
+            </ul>
+            <button class="plan-button" onclick="selectPlan('vip')">Pilih Paket</button>
+        </div>
+    </div>
+
+    <script>
+        function selectPlan(plan) {
+            localStorage.setItem('selectedPlan', plan);
+            window.location.href = "payment.html";
+        }
+    </script>
+</body>
+</html>
