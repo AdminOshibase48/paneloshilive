@@ -134,3 +134,73 @@ body {
 .plan-button:hover {
     background: #c0392b;
 }
+
+/* Navbar Styles */
+.navbar {
+    background-color: #2c3e50;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-left: 10px;
+    transition: background 0.3s;
+}
+
+.nav-links li a:hover {
+    background-color: #e74c3c;
+}
+
+.nav-links li a.active {
+    background-color: #e74c3c;
+    font-weight: bold;
+}
+
+/* Tambahkan ini di media query untuk responsive */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .nav-links {
+        margin-top: 15px;
+    }
+    
+    .nav-links li a {
+        margin: 0 5px;
+        padding: 8px 10px;
+    }
+}
