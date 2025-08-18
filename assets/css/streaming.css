@@ -1,0 +1,484 @@
+/* Global Styles */
+:root {
+    --primary: #e74c3c;
+    --primary-dark: #c0392b;
+    --primary-light: #ff6b6b;
+    --dark: #2c3e50;
+    --darker: #1a252f;
+    --light: #ecf0f1;
+    --lighter: #ffffff;
+    --gray: #95a5a6;
+    --dark-gray: #7f8c8d;
+    --success: #2ecc71;
+    --danger: #e74c3c;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --shadow-dark: 0 8px 30px rgba(0, 0, 0, 0.2);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--darker);
+    color: var(--light);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.streaming-header {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(5px);
+}
+
+.streaming-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.logo img {
+    height: 30px;
+}
+
+.logo span {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.stream-info h1 {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.stream-meta {
+    display: flex;
+    gap: 15px;
+    font-size: 0.9rem;
+    color: var(--gray);
+    margin-top: 5px;
+}
+
+.stream-meta i {
+    margin-right: 5px;
+}
+
+.btn-fullscreen {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: var(--transition);
+}
+
+.btn-fullscreen:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Main Content */
+.stream-grid {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.video-container {
+    background-color: black;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.stream-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+.stream-status {
+    background-color: var(--danger);
+    color: white;
+    padding: 3px 10px;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.stream-title {
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.stream-controls {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: rgba(0, 0, 0, 0.7);
+    gap: 15px;
+}
+
+.control-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.control-btn:hover {
+    color: var(--primary);
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.volume-slider {
+    width: 80px;
+    height: 5px;
+    -webkit-appearance: none;
+    background: #555;
+    border-radius: 3px;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.volume-slider:hover {
+    opacity: 1;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    background: var(--primary);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.time-display {
+    font-size: 0.9rem;
+    color: var(--gray);
+    margin-left: auto;
+}
+
+.quality-btn {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.quality-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Chat Container */
+.chat-container {
+    background-color: var(--dark);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+}
+
+.chat-header {
+    padding: 15px;
+    background-color: var(--darker);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-header h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.chat-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.chat-btn {
+    background: none;
+    border: none;
+    color: var(--gray);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.chat-btn:hover {
+    color: var(--primary);
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+.message {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.user-avatar img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.message-content {
+    flex: 1;
+}
+
+.user-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--primary);
+}
+
+.message-text {
+    font-size: 0.9rem;
+    margin: 3px 0;
+}
+
+.message-time {
+    font-size: 0.7rem;
+    color: var(--gray);
+}
+
+.chat-input {
+    padding: 15px;
+    background-color: var(--darker);
+    display: flex;
+    gap: 10px;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    outline: none;
+}
+
+.chat-input input::placeholder {
+    color: var(--gray);
+}
+
+.send-btn {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.send-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Stream Details */
+.stream-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.detail-card {
+    background-color: var(--dark);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.detail-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: var(--primary);
+}
+
+.detail-card p {
+    font-size: 0.9rem;
+    color: var(--gray);
+    line-height: 1.6;
+}
+
+.member-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.member-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.member-item img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.member-item span {
+    font-size: 0.8rem;
+}
+
+.next-stream {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.next-time {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.next-title {
+    font-size: 0.9rem;
+}
+
+.reminder-btn {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: var(--transition);
+}
+
+.reminder-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Footer */
+.streaming-footer {
+    background-color: var(--darker);
+    padding: 20px 0;
+    margin-top: 50px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--gray);
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .stream-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .chat-container {
+        height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .streaming-header .container {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    
+    .stream-info {
+        margin: 10px 0;
+    }
+    
+    .stream-controls {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .time-display {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .stream-details {
+        grid-template-columns: 1fr;
+    }
+    
+    .stream-controls {
+        gap: 10px;
+        padding: 10px;
+    }
+    
+    .volume-slider {
+        width: 60px;
+    }
+}
