@@ -11,20 +11,22 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-     <!-- Loading Screen Container -->
-    <div id="loadingScreen" class="loading-screen">
-        <video id="loadingVideo" class="loading-video" muted playsinline>
-            <source src="img/Animasi logo.webm" type="video/mp4">
-            <!-- Fallback text -->
-            <p class="loading-text">OSHI LIVE 48</p>
-        </video>
-    </div>
-     <!-- Your main content (hidden during loading) -->
-    <div id="mainContent" style="display:none;">
-        <!-- Rest of your website content -->
+     <!-- Loading Screen -->
+    <div id="loadingScreen">
+        <div class="video-container">
+            <video id="loadingVideo" autoplay muted playsinline>
+                <source src="assets/videos/loading.webm" type="video/webm">
+                <source src="assets/videos/loading.mp4" type="video/mp4">
+            </video>
+        </div>
     </div>
 
-    <script src="assets/css/loading.js"></script>
+    <!-- Konten Utama -->
+    <main id="mainContent" style="opacity:0;">
+        <!-- Konten website Anda -->
+    </main>
+
+    <script src="assets/js/loading.js"></script>
 </body>
 </html>
     <!-- Header -->
