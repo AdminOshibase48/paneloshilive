@@ -4,119 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pembayaran - OshiLive48</title>
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/payment.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navbar (Sesuai halaman sebelumnya) -->
-    <nav class="navbar">
+    <!-- Header (Consistent with Homepage) -->
+    <header class="header">
         <div class="container">
             <div class="logo">
-                <img src="img/logo.png" alt="OshiLive48">
+                <img src="img/logo.png" alt="OshiLive48 Logo">
                 <span>OshiLive48</span>
             </div>
-            <ul class="nav-links">
-                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="pricing.html"><i class="fas fa-crown"></i> Membership</a></li>
-                <li><a href="payment.html" class="active"><i class="fas fa-credit-card"></i> Payment</a></li>
-                <li><a href="login.html"><i class="fas fa-user"></i> Login</a></li>
-            </ul>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="schedule"><i class="fas fa-crown"></i> schelude</a></li>
+                    <li><a href="pricing.html" class="active"><i class="fas fa-credit-card"></i> Membership</a></li>
+                    <li><a href="tentang.html" class="active"><i class="fas fa-credit-card"></i> About</a></li>
+                </ul>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-    <div class="payment-container">
-        <div class="payment-summary">
-            <h2><i class="fas fa-receipt"></i> Ringkasan Pembayaran</h2>
-            <div id="plan-details" class="plan-details">
-                <!-- Diisi oleh JavaScript -->
+    <!-- Payment Content -->
+    <section class="payment-section">
+        <div class="container">
+            <div class="payment-card">
+                <h2><i class="fas fa-receipt"></i> Ringkasan Pembayaran</h2>
+                
+                <div id="plan-details" class="plan-details">
+                    <!-- Will be filled by JavaScript -->
+                </div>
+                
+                <div class="payment-actions">
+                    <a href="https://saweria.co/oshilive48" class="btn btn-primary" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Bayar via Saweria
+                    </a>
+                    <a href="https://wa.me/6281234567890" class="btn btn-outline">
+                        <i class="fab fa-whatsapp"></i> Konfirmasi Pembayaran
+                    </a>
+                </div>
+                
+                <div class="payment-note">
+                    <p><i class="fas fa-info-circle"></i> Setelah pembayaran, harap konfirmasi via WhatsApp dengan menyertakan bukti transfer.</p>
+                </div>
             </div>
         </div>
-
-        <div class="payment-methods">
-            <h2><i class="fas fa-wallet"></i> Metode Pembayaran</h2>
-            
-            <div class="method">
-                <input type="radio" name="payment" id="bank-transfer" checked>
-                <label for="bank-transfer">
-                    <img src="img/bank.png" alt="Transfer Bank">
-                    <span>Transfer Bank</span>
-                </label>
-            </div>
-            
-            <div class="method">
-                <input type="radio" name="payment" id="ewallet">
-                <label for="ewallet">
-                    <img src="img/wallet.png" alt="E-Wallet">
-                    <span>E-Wallet (Gopay/DANA)</span>
-                </label>
-            </div>
-            
-            <div class="method">
-                <input type="radio" name="payment" id="qris">
-                <label for="qris">
-                    <img src="img/qr-code.png" alt="QRIS">
-                    <span>QRIS</span>
-                </label>
-            </div>
-
-            <button id="pay-button" class="pay-button">
-                <i class="fas fa-lock"></i> Bayar Sekarang
-            </button>
-        </div>
-    </div>
+    </section>
 
     <script>
-        // Ambil data paket dari localStorage
-        const selectedPlan = localStorage.getItem('selectedPlan');
+        // Show selected plan details
+        const plan = localStorage.getItem('selectedPlan');
         const planDetails = document.getElementById('plan-details');
-
-        // Tampilkan detail paket
-        function showPlanDetails(plan) {
-            let planName, price, features;
-            
-            switch(plan) {
-                case 'basic':
-                    planName = "Basic";
-                    price = "Rp50.000";
-                    features = ["Akses 1 Device", "Kualitas HD"];
-                    break;
-                case 'premium':
-                    planName = "Premium";
-                    price = "Rp100.000";
-                    features = ["Akses 2 Device", "Kualitas FHD", "Rekaman Show"];
-                    break;
-                case 'vip':
-                    planName = "VIP";
-                    price = "Rp200.000";
-                    features = ["Akses 4 Device", "Kualitas 4K", "Bonus Content"];
-                    break;
-                default:
-                    // Redirect jika tidak ada pilihan paket
-                    window.location.href = "pricing.html";
-                    return;
-            }
-
+        
+        const plans = {
+            basic: { name: "Basic", price: "Rp50.000", features: ["Akses 1 Device", "Kualitas HD"] },
+            premium: { name: "Premium", price: "Rp100.000", features: ["Akses 2 Device", "Kualitas FHD", "Rekaman Show"] },
+            vip: { name: "VIP", price: "Rp200.000", features: ["Akses 4 Device", "Kualitas 4K", "Bonus Content"] }
+        };
+        
+        if (plan && plans[plan]) {
+            const selectedPlan = plans[plan];
             planDetails.innerHTML = `
-                <div class="plan-name">${planName}</div>
-                <div class="plan-price">${price} <span>/bulan</span></div>
+                <div class="plan-name">${selectedPlan.name}</div>
+                <div class="plan-price">${selectedPlan.price} <span>/bulan</span></div>
                 <ul class="plan-features">
-                    ${features.map(feature => `<li><i class="fas fa-check"></i> ${feature}</li>`).join('')}
+                    ${selectedPlan.features.map(feat => `<li><i class="fas fa-check"></i> ${feat}</li>`).join('')}
                 </ul>
             `;
-        }
-
-        // Proses pembayaran
-        document.getElementById('pay-button').addEventListener('click', function() {
-            const paymentMethod = document.querySelector('input[name="payment"]:checked').id;
             
-            // Simulasi pembayaran berhasil
-            localStorage.setItem('paymentStatus', 'paid');
-            alert('Pembayaran berhasil!');
-            window.location.href = "dashboard.html";
-        });
-
-        // Jalankan saat halaman dimuat
-        showPlanDetails(selectedPlan);
+            // Update WA link with plan info
+            const waLink = document.querySelector('.btn-outline');
+            waLink.href = `https://wa.me/6281234567890?text=Konfirmasi%20pembayaran%20paket%20${encodeURIComponent(selectedPlan.name)}%20${encodeURIComponent(selectedPlan.price)}`;
+        } else {
+            window.location.href = "pricing.html";
+        }
     </script>
 </body>
 </html>
