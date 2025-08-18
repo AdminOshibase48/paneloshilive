@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembayaran - OshiLive48</title>
+    <link rel="stylesheet" href="assets/css/payment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar (Sesuai halaman sebelumnya) -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="img/logo.png" alt="OshiLive48">
+                <span>OshiLive48</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="pricing.html"><i class="fas fa-crown"></i> Membership</a></li>
+                <li><a href="payment.html" class="active"><i class="fas fa-credit-card"></i> Payment</a></li>
+                <li><a href="login.html"><i class="fas fa-user"></i> Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="payment-container">
+        <div class="payment-summary">
+            <h2><i class="fas fa-receipt"></i> Ringkasan Pembayaran</h2>
+            <div id="plan-details" class="plan-details">
+                <!-- Diisi oleh JavaScript -->
+            </div>
+        </div>
+
+        <div class="payment-methods">
+            <h2><i class="fas fa-wallet"></i> Metode Pembayaran</h2>
+            
+            <div class="method">
+                <input type="radio" name="payment" id="bank-transfer" checked>
+                <label for="bank-transfer">
+                    <img src="img/bank.png" alt="Transfer Bank">
+                    <span>Transfer Bank</span>
+                </label>
+            </div>
+            
+            <div class="method">
+                <input type="radio" name="payment" id="ewallet">
+                <label for="ewallet">
+                    <img src="img/gopay.png" alt="E-Wallet">
+                    <span>E-Wallet (Gopay/DANA)</span>
+                </label>
+            </div>
+            
+            <div class="method">
+                <input type="radio" name="payment" id="qris">
+                <label for="qris">
+                    <img src="img/qris.png" alt="QRIS">
+                    <span>QRIS</span>
+                </label>
+            </div>
+
+            <button id="pay-button" class="pay-button">
+                <i class="fas fa-lock"></i> Bayar Sekarang
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Ambil data paket dari localStorage
+        const selectedPlan = localStorage.getItem('selectedPlan');
+        const planDetails = document.getElementById('plan-details');
+
+        // Tampilkan detail paket
+        function showPlanDetails(plan) {
+            let planName, price, features;
+            
+            switch(plan) {
+                case 'basic':
+                    planName = "Basic";
+                    price = "Rp50.000";
+                    features = ["Akses 1 Device", "Kualitas HD"];
+                    break;
+                case 'premium':
+                    planName = "Premium";
+                    price = "Rp100.000";
+                    features = ["Akses 2 Device", "Kualitas FHD", "Rekaman Show"];
+                    break;
+                case 'vip':
+                    planName = "VIP";
+                    price = "Rp200.000";
+                    features = ["Akses 4 Device", "Kualitas 4K", "Bonus Content"];
+                    break;
+                default:
+                    // Redirect jika tidak ada pilihan paket
+                    window.location.href = "pricing.html";
+                    return;
+            }
+
+            planDetails.innerHTML = `
+                <div class="plan-name">${planName}</div>
+                <div class="plan-price">${price} <span>/bulan</span></div>
+                <ul class="plan-features">
+                    ${features.map(feature => `<li><i class="fas fa-check"></i> ${feature}</li>`).join('')}
+                </ul>
+            `;
+        }
+
+        // Proses pembayaran
+        document.getElementById('pay-button').addEventListener('click', function() {
+            const paymentMethod = document.querySelector('input[name="payment"]:checked').id;
+            
+            // Simulasi pembayaran berhasil
+            localStorage.setItem('paymentStatus', 'paid');
+            alert('Pembayaran berhasil!');
+            window.location.href = "dashboard.html";
+        });
+
+        // Jalankan saat halaman dimuat
+        showPlanDetails(selectedPlan);
+    </script>
+</body>
+</html>
