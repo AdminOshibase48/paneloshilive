@@ -2,45 +2,43 @@ document.addEventListener('DOMContentLoaded', function() {
     const loadingScreen = document.getElementById('loadingScreen');
     const loadingVideo = document.getElementById('loadingVideo');
     const mainContent = document.getElementById('mainContent');
-    
-    // 1. Start loading the video
-    loadingVideo.load();
-    
-    // 2. When video metadata is loaded
-    loadingVideo.onloadedmetadata = function() {
-        // Play the video
-        loadingVideo.play();
+
+    // 1. Cek apakah video didukung
+    if (loadingVideo.canPlayType) {
+        // 2. Atur video untuk loop (jika perlu)
+        loadingVideo.loop = false;
         
-        // Set minimum display time (3 seconds in this case)
-        setTimeout(function() {
-            // 3. When video ends, hide loading screen
-            loadingVideo.onended = function() {
-                loadingScreen.style.opacity = '0';
-                setTimeout(function() {
-                    loadingScreen.style.display = 'none';
-                    mainContent.style.display = 'block';
-                }, 500); // Fade-out duration
-            };
-            
-            // If video doesn't end naturally (e.g., looped video), force transition after 3 seconds
-            setTimeout(function() {
-                if(loadingScreen.style.display !== 'none') {
-                    loadingScreen.style.opacity = '0';
-                    setTimeout(function() {
-                        loadingScreen.style.display = 'none';
-                        mainContent.style.display = 'block';
-                    }, 500);
-                }
-            }, 3000);
-        }, 500);
-    };
-    
-    // Fallback if video fails to load
-    loadingVideo.onerror = function() {
-        loadingScreen.innerHTML = '<p class="loading-text">OSHI LIVE 48</p>';
-        setTimeout(function() {
+        // 3. Saat video siap diputar
+        loadingVideo.oncanplay = function() {
+            // Mulai pemutaran
+            loadingVideo.play().catch(e => {
+                console.log("Autoplay blocked:", e);
+                handleLoadingComplete();
+            });
+        };
+        
+        // 4. Saat video selesai
+        loadingVideo.onended = handleLoadingComplete;
+        
+        // 5. Jika video error
+        loadingVideo.onerror = handleLoadingComplete;
+        
+        // 6. Timeout fallback (5 detik)
+        setTimeout(handleLoadingComplete, 5000);
+    } else {
+        // Browser tidak support video
+        handleLoadingComplete();
+    }
+
+    function handleLoadingComplete() {
+        // Animasi fade out
+        loadingScreen.style.transition = "opacity 0.5s ease";
+        loadingScreen.style.opacity = 0;
+        
+        // Sembunyikan setelah animasi selesai
+        setTimeout(() => {
             loadingScreen.style.display = 'none';
             mainContent.style.display = 'block';
-        }, 2000);
-    };
+        }, 500);
+    }
 });
