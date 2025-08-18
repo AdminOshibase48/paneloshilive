@@ -738,3 +738,250 @@ ul {
         right: 20px;
     }
 }
+
+/* Schedule Section */
+.schedule {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+.schedule-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.calendar-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #e74c3c;
+    color: white;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.current-week {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1px;
+    background-color: #eee;
+}
+
+.day-column {
+    background-color: white;
+}
+
+.day-header {
+    padding: 15px;
+    text-align: center;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #eee;
+}
+
+.day-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.day-date {
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: 5px;
+}
+
+.events {
+    padding: 10px;
+}
+
+.event-card {
+    display: flex;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.event-time {
+    min-width: 70px;
+    padding: 15px 10px;
+    background-color: #f8f8f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: #e74c3c;
+    font-size: 0.9rem;
+}
+
+.event-details {
+    flex: 1;
+    padding: 15px;
+}
+
+.event-title {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.event-team {
+    font-size: 0.85rem;
+    color: #777;
+    margin-bottom: 8px;
+}
+
+.event-meta {
+    display: flex;
+    gap: 10px;
+}
+
+.event-type {
+    font-size: 0.8rem;
+    background-color: #f0f0f0;
+    padding: 3px 8px;
+    border-radius: 10px;
+    color: #555;
+}
+
+.event-status {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 10px;
+    text-transform: uppercase;
+}
+
+.event-status.live {
+    background-color: #ffebee;
+    color: #e74c3c;
+}
+
+.event-status.upcoming {
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+
+.event-status.ended {
+    background-color: #f5f5f5;
+    color: #777;
+}
+
+.btn-reminder {
+    min-width: 40px;
+    background-color: #f5f5f5;
+    border: none;
+    color: #e74c3c;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-reminder:hover {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.schedule-legend {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #eee;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.legend-color.live {
+    background-color: #e74c3c;
+}
+
+.legend-color.upcoming {
+    background-color: #1976d2;
+}
+
+.legend-color.ended {
+    background-color: #777;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .schedule-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .calendar-nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .nav-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .event-card {
+        flex-direction: column;
+    }
+    
+    .event-time {
+        width: 100%;
+        justify-content: flex-start;
+        padding: 10px 15px;
+    }
+    
+    .btn-reminder {
+        width: 100%;
+        padding: 10px;
+    }
+    
+    .schedule-legend {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+}
