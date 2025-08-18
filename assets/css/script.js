@@ -76,32 +76,29 @@ AOS.init({
     offset: 100
 });
 
-// Tab Functionality
-const tabHeaders = document.querySelectorAll('.tab-header div');
-const tabIndicator = document.querySelector('.tab-indicator');
-const tabBodies = document.querySelectorAll('.tab-body > div');
+// Schedule Tab Functionality
+const scheduleTabs = document.querySelectorAll('.schedule-tabs .tab');
+const schedulePanes = document.querySelectorAll('.schedule-content .tab-pane');
 
-function setTab(index) {
-    // Update tab headers
-    tabHeaders.forEach(header => header.classList.remove('active'));
-    tabHeaders[index].classList.add('active');
-    
-    // Update tab indicator
-    const activeTab = tabHeaders[index];
-    tabIndicator.style.width = activeTab.offsetWidth + 'px';
-    tabIndicator.style.left = activeTab.offsetLeft + 'px';
-    
-    // Update tab bodies
-    tabBodies.forEach(body => body.classList.remove('active'));
-    tabBodies[index].classList.add('active');
-}
-
-tabHeaders.forEach((header, index) => {
-    header.addEventListener('click', () => setTab(index));
+scheduleTabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+        // Remove active class from all tabs
+        scheduleTabs.forEach(t => t.classList.remove('active'));
+        
+        // Add active class to clicked tab
+        this.classList.add('active');
+        
+        // Hide all panes
+        schedulePanes.forEach(pane => pane.classList.remove('active'));
+        
+        // Show corresponding pane
+        const tabId = this.getAttribute('data-tab');
+        document.getElementById(tabId).classList.add('active');
+    });
 });
 
 // Set initial tab
-setTab(0);
+scheduleTabs[0].click();
 
 // FAQ Accordion
 const faqQuestions = document.querySelectorAll('.faq-question');
@@ -118,56 +115,6 @@ faqQuestions.forEach(question => {
             }
         });
     });
-});
-
-// Initialize Swiper for Payment Methods
-const paymentSwiper = new Swiper('.payment-slider', {
-    slidesPerView: 3,
-    spaceBetween: 20,
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-    breakpoints: {
-        320: {
-            slidesPerView: 2,
-            spaceBetween: 15
-        },
-        576: {
-            slidesPerView: 3,
-            spaceBetween: 20
-        },
-        768: {
-            slidesPerView: 4,
-            spaceBetween: 20
-        },
-        992: {
-            slidesPerView: 5,
-            spaceBetween: 20
-        }
-    }
-});
-
-// Initialize Swiper for Testimonials
-const testimonialSwiper = new Swiper('.testimonial-swiper', {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-    breakpoints: {
-        768: {
-            slidesPerView: 2,
-            spaceBetween: 30
-        }
-    }
-});
-
-// Floating animation delay for elements
-const floatingElements = document.querySelectorAll('.floating');
-floatingElements.forEach(el => {
-    el.style.animationDelay = Math.random() * 2 + 's';
 });
 
 // Set current year in footer
