@@ -1,0 +1,136 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+    padding: 0;
+    margin: 0;
+}
+
+.pricing-header {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+}
+
+.pricing-header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.pricing-header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Pricing Container */
+.pricing-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Pricing Plan */
+.pricing-plan {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.pricing-plan:hover {
+    transform: translateY(-10px);
+}
+
+.pricing-plan.popular {
+    border: 2px solid #e74c3c;
+}
+
+.popular-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #e74c3c;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.plan-header {
+    padding: 20px;
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+}
+
+.plan-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.price span {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.plan-features {
+    padding: 20px;
+    list-style: none;
+}
+
+.plan-features li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+}
+
+.plan-features li i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+.plan-features li .fa-check {
+    color: #2ecc71;
+}
+
+.plan-features li .fa-times {
+    color: #e74c3c;
+}
+
+.plan-button {
+    display: block;
+    width: 80%;
+    padding: 12px;
+    margin: 20px auto;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.plan-button:hover {
+    background: #c0392b;
+}
