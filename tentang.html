@@ -1,55 +1,127 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tentang Kami - OshiLive48</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - OshiLive48</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Header (Consistent with other pages) -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="img/logo.png" alt="OshiLive48 Logo">
+                <span>OshiLive48</span>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="pricing.html"><i class="fas fa-crown"></i> Membership</a></li>
+                    <li><a href="about.html" class="active"><i class="fas fa-info-circle"></i> Tentang Kami</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <!-- Header dengan Logo -->
-  <header class="shop-header">
-    <a href="https://oshilive48.netlify.app/" class="logo-link">
-      <img src="img/logo.png" alt="Logo OshiLive48" class="logo" />
-    </a>
-  </header>
+    <!-- About Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <h1>Tentang <span>OshiLive48</span></h1>
+            <p>Komunitas fans yang berdedikasi untuk pengalaman menonton yang lebih baik</p>
+        </div>
+    </section>
 
-  <!-- Tombol kembali -->
-  <a href="shop.html" class="back-button">← Kembali ke Shop</a>
+    <!-- About Content -->
+    <section class="about-content">
+        <div class="container">
+            <div class="about-card">
+                <h2><i class="fas fa-heart"></i> Apa Itu OshiLive48?</h2>
+                <p>OshiLive48 adalah proyek komunitas independen yang bertujuan memberikan pengalaman nonton teater dan event JKT48 dengan cara yang lebih fleksibel, dekat, dan akrab bagi para fans.</p>
+                
+                <div class="disclaimer">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <p>Kami bukan bagian dari manajemen resmi JKT48. Semua layanan yang disediakan adalah bentuk dukungan kreatif dari fans untuk fans, demi menjaga semangat fandom yang solid dan saling support.</p>
+                </div>
+                
+                <p>Dengan sistem pemesanan mandiri, informasi acara yang terintegrasi, serta platform login eksklusif, kami berharap OshiLive48 bisa jadi ruang alternatif yang menyenangkan dan aman untuk mendukung oshi kamu!</p>
+            </div>
+            
+            <div class="mission-section">
+                <h2><i class="fas fa-bullseye"></i> Misi Kami</h2>
+                <div class="mission-grid">
+                    <div class="mission-card">
+                        <div class="mission-icon">
+                            <i class="fas fa-ticket-alt"></i>
+                        </div>
+                        <h3>Akses Mudah</h3>
+                        <p>Menyediakan akses nonton acara dengan sistem yang mudah dan ramah</p>
+                    </div>
+                    
+                    <div class="mission-card">
+                        <div class="mission-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Komunitas Solid</h3>
+                        <p>Membangun komunitas fans yang aktif dan saling support</p>
+                    </div>
+                    
+                    <div class="mission-card">
+                        <div class="mission-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <h3>Pengalaman Digital</h3>
+                        <p>Menghadirkan pengalaman digital nonton event yang menyenangkan</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="team-section">
+                <h2><i class="fas fa-user-friends"></i> Tim Kami</h2>
+                <p>Dibangun oleh tim kecil yang terdiri dari:</p>
+                <ul class="team-list">
+                    <li><i class="fas fa-chevron-right"></i> Developer fans JKT48</li>
+                    <li><i class="fas fa-chevron-right"></i> Desainer grafis</li>
+                    <li><i class="fas fa-chevron-right"></i> Content moderator</li>
+                    <li><i class="fas fa-chevron-right"></i> Event organizer komunitas</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-  <!-- Konten Utama -->
-  <main class="content fade-in">
-    <h1>Tentang Kami</h1>
-
-    <p><strong>OshiLive48</strong> adalah proyek komunitas independen yang bertujuan memberikan pengalaman nonton teater dan event JKT48 dengan cara yang lebih fleksibel, dekat, dan akrab bagi para fans.</p>
-
-    <p>Kami bukan bagian dari manajemen resmi JKT48. Semua layanan yang disediakan adalah bentuk dukungan kreatif dari fans untuk fans, demi menjaga semangat fandom yang solid dan saling support.</p>
-
-    <p>Dengan sistem pemesanan mandiri, informasi acara yang terintegrasi, serta platform login eksklusif, kami berharap OshiLive48 bisa jadi ruang alternatif yang menyenangkan dan aman untuk mendukung oshi kamu!</p>
-
-    <h2>Misi Kami</h2>
-    <ul>
-      <li>🎟️ Menyediakan akses nonton acara dengan sistem yang mudah dan ramah</li>
-      <li>🧡 Membangun komunitas fans yang aktif dan saling support</li>
-      <li>📺 Menghadirkan pengalaman digital nonton event yang menyenangkan</li>
-    </ul>
-
-    <h2>Hubungi Kami</h2>
-    <p>Jika kamu ingin bertanya, memberikan saran, atau kerja sama, jangan ragu untuk menghubungi kami lewat:</p>
-    <ul>
-      <li>📩 Instagram: <a href="https://instagram.com/oshibase48_" target="_blank">@oshibase48</a></li>
-      <li>💬 DM Admin via Telegram/WhatsApp (akan diberikan setelah pemesanan)</li>
-    </ul>
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    &copy; 2025 OshiLive48 — Komunitas fans perjeketian by Oshibase48
-  </footer>
-
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="logo">
+                        <img src="img/logo.png" alt="OshiLive48">
+                        <span>OshiLive48</span>
+                    </div>
+                    <p>Platform streaming komunitas untuk pertunjukan JKT48</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Tautan Cepat</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pricing.html">Membership</a></li>
+                        <li><a href="about.html">Tentang Kami</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Hubungi Kami</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> hello@oshilive48.id</li>
+                        <li><i class="fab fa-twitter"></i> @OshiLive48</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 OshiLive48. Tidak berafiliasi dengan JKT48.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
