@@ -1,30 +1,39 @@
-a<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OshiLive48 - Streaming Theater JKT48</title>
+    <title>OshiLive48 - Streaming Eksklusif JKT48</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
 </head>
 <body>
+    <!-- Loading Screen -->
     <div class="loading-screen">
-        <div class="spinner"></div>
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+        <div class="loading-text">OshiLive48</div>
     </div>
 
+    <!-- Header -->
     <header class="header">
         <div class="container">
             <div class="logo" data-aos="fade-down">
-                <h1>OshiLive48</h1>
+                <img src="assets/images/logo.png" alt="OshiLive48 Logo">
+                <span>OshiLive48</span>
             </div>
             <nav class="navbar" data-aos="fade-down">
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#schedule">Schedule</a></li>
-                    <li><a href="#membership">Membership</a></li>
-                    <li><a href="#payments">Payments</a></li>
-                    <li><a href="#primes">Primes</a></li>
+                    <li><a href="#home" class="active"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#schedule"><i class="fas fa-calendar-alt"></i> Schedule</a></li>
+                    <li><a href="#membership"><i class="fas fa-crown"></i> Membership</a></li>
+                    <li><a href="#payments"><i class="fas fa-credit-card"></i> Payments</a></li>
+                    <li><a href="#primes"><i class="fas fa-gem"></i> Primes</a></li>
+                    <li><a href="#faq"><i class="fas fa-question-circle"></i> FAQ</a></li>
                 </ul>
             </nav>
             <div class="mobile-menu-btn">
@@ -33,60 +42,369 @@ a<!DOCTYPE html>
         </div>
     </header>
 
+    <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-bg-animation"></div>
+        <div class="hero-bg-animation">
+            <div class="circle x1"></div>
+            <div class="circle x2"></div>
+            <div class="circle x3"></div>
+            <div class="circle x4"></div>
+            <div class="circle x5"></div>
+        </div>
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text" data-aos="fade-right" data-aos-delay="300">
-                    <h2>OshiLive48 OFFICIAL</h2>
-                    <p>OshiLive48 adalah platform streaming pihak ketiga tidak resmi yang menyediakan akses ke streaming Theater JKT48 dengan harga terjangkau dan kualitas yang sesuai.</p>
+                    <h1>OSHI<span>LIVE</span>48</h1>
+                    <h2>OFFICIAL STREAMING</h2>
+                    <p>Platform streaming eksklusif untuk pertunjukan Theater JKT48 dengan kualitas premium dan harga terjangkau.</p>
                     <div class="hero-buttons">
-                        <a href="#membership" class="btn btn-primary">Mulai Menonton →</a>
-                        <a href="#faq" class="btn btn-outline">📌 Lihat FAQ</a>
+                        <a href="#membership" class="btn btn-primary pulse">
+                            <i class="fas fa-play"></i> Mulai Menonton
+                        </a>
+                        <a href="#schedule" class="btn btn-outline">
+                            <i class="fas fa-calendar-check"></i> Lihat Jadwal
+                        </a>
                     </div>
                 </div>
                 <div class="hero-image" data-aos="fade-left" data-aos-delay="500">
-                    <img src="https://res.cloudinary.com/haymzm4wp/image/upload/v1746940686/gnzangtum7a8ygmk8hvj.jpg" alt="JKT48 Theater" class="img-fluid floating">
+                    <div class="image-container floating">
+                        <img src="assets/images/hero-members.png" alt="JKT48 Members" class="main-image">
+                        <img src="assets/images/decoration-1.png" alt="" class="decoration d1">
+                        <img src="assets/images/decoration-2.png" alt="" class="decoration d2">
+                        <img src="assets/images/decoration-3.png" alt="" class="decoration d3">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="features" class="features">
+    <!-- Live Schedule Section -->
+    <section id="schedule" class="schedule">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Layanan Kami</h2>
-            <div class="features-grid">
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card-icon">
-                        <i class="fas fa-desktop"></i>
-                    </div>
-                    <h3>Streaming HD</h3>
-                    <p>Kualitas streaming Full HD tanpa buffering</p>
+            <h2 class="section-title" data-aos="fade-up">Jadwal <span>Streaming</span></h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Jadwal lengkap pertunjukan Theater JKT48</p>
+            
+            <div class="tabs" data-aos="fade-up" data-aos-delay="200">
+                <div class="tab-header">
+                    <div class="active"><i class="fas fa-calendar-week"></i> Minggu Ini</div>
+                    <div><i class="fas fa-calendar-day"></i> Hari Ini</div>
+                    <div><i class="fas fa-calendar-alt"></i> Besok</div>
                 </div>
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card-icon">
-                        <i class="fas fa-calendar-alt"></i>
+                <div class="tab-indicator"></div>
+                <div class="tab-body">
+                    <div class="active">
+                        <div class="schedule-day">
+                            <h3>Senin, 21 Agustus 2023</h3>
+                            <div class="events">
+                                <div class="event-card">
+                                    <div class="event-time">19:00 WIB</div>
+                                    <div class="event-details">
+                                        <h4>Pajama Drive</h4>
+                                        <p>Team J - Pertunjukan Theater</p>
+                                    </div>
+                                    <div class="event-action">
+                                        <a href="#" class="btn btn-small">Reminder</a>
+                                    </div>
+                                </div>
+                                <!-- Tambahkan event lainnya -->
+                            </div>
+                        </div>
                     </div>
-                    <h3>Jadwal Lengkap</h3>
-                    <p>Jadwal pertunjukan theater yang terupdate</p>
-                </div>
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card-icon">
-                        <i class="fas fa-user-friends"></i>
+                    <div>
+                        <!-- Konten tab Hari Ini -->
                     </div>
-                    <h3>Komunitas</h3>
-                    <p>Komunitas penggemar JKT48 yang aktif</p>
+                    <div>
+                        <!-- Konten tab Besok -->
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Membership Section -->
+    <section id="membership" class="membership">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Paket <span>Membership</span></h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Pilih paket yang sesuai dengan kebutuhan Anda</p>
+            
+            <div class="pricing-grid" data-aos="fade-up" data-aos-delay="200">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Basic</h3>
+                        <div class="price">Rp50.000<span>/bulan</span></div>
+                    </div>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> Akses 1 Device</li>
+                        <li><i class="fas fa-check"></i> Kualitas HD</li>
+                        <li><i class="fas fa-check"></i> Jadwal Terupdate</li>
+                        <li><i class="fas fa-times"></i> Rekaman Show</li>
+                        <li><i class="fas fa-times"></i> Bonus Content</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline">Pilih Paket</a>
+                </div>
+                
+                <div class="pricing-card popular">
+                    <div class="popular-badge">POPULAR</div>
+                    <div class="pricing-header">
+                        <h3>Premium</h3>
+                        <div class="price">Rp100.000<span>/bulan</span></div>
+                    </div>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> Akses 2 Device</li>
+                        <li><i class="fas fa-check"></i> Kualitas FHD</li>
+                        <li><i class="fas fa-check"></i> Jadwal Terupdate</li>
+                        <li><i class="fas fa-check"></i> Rekaman Show</li>
+                        <li><i class="fas fa-times"></i> Bonus Content</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">Pilih Paket</a>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>VIP</h3>
+                        <div class="price">Rp200.000<span>/bulan</span></div>
+                    </div>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> Akses 4 Device</li>
+                        <li><i class="fas fa-check"></i> Kualitas 4K</li>
+                        <li><i class="fas fa-check"></i> Jadwal Terupdate</li>
+                        <li><i class="fas fa-check"></i> Rekaman Show</li>
+                        <li><i class="fas fa-check"></i> Bonus Content</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline">Pilih Paket</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Methods Section -->
+    <section id="payments" class="payments">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Metode <span>Pembayaran</span></h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Berbagai metode pembayaran yang kami sediakan</p>
+            
+            <div class="payment-methods" data-aos="fade-up" data-aos-delay="200">
+                <div class="swiper payment-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="payment-card">
+                                <img src="https://www.bca.co.id/-/media/Feature/Card/List-Card/Tentang-BCA/Brand-Assets/Logo-BCA/Logo-BCA_Putih.png" alt="BCA">
+                                <span>Bank Transfer</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="payment-card">
+                                <img src="assets/images/payments/mandiri.png" alt="Mandiri">
+                                <span>Bank Transfer</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="payment-card">
+                                <img src="assets/images/payments/bni.png" alt="BNI">
+                                <span>Bank Transfer</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="payment-card">
+                                <img src="https://static-src.vocagame.com/gopay/site-logo-full-white-0a7e-original.png" alt="Gopay">
+                                <span>E-Wallet</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="payment-card">
+                                <img src="assets/images/payments/ovo.png" alt="OVO">
+                                <span>E-Wallet</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="payment-card">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Logo_dana_blue.svg/512px-Logo_dana_blue.svg.png" alt="DANA">
+                                <span>E-Wallet</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="payment-card">
+                                <img src="https://www.idroot.com/wp-content/uploads/2024/07/qris_white.png" alt="Qris">
+                                <span>E-Wallet</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Primes Section -->
+    <section id="primes" class="primes">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Prime <span>Member</span></h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Keuntungan menjadi Prime Member</p>
+            
+            <div class="primes-content" data-aos="fade-up" data-aos-delay="200">
+                <div class="primes-image">
+                    <img src="assets/images/prime-member.png" alt="Prime Member" class="floating">
+                </div>
+                <div class="primes-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Akses Prioritas</h3>
+                            <p>Dapatkan akses streaming 30 menit lebih awal sebelum member biasa</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Backstage Content</h3>
+                            <p>Akses eksklusif ke konten behind the scene dan backstage</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Merchandise Discount</h3>
+                            <p>Diskon khusus untuk merchandise resmi JKT48</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Exclusive Community</h3>
+                            <p>Bergabung dengan komunitas eksklusif Prime Member</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Pertanyaan <span>Umum</span></h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Temukan jawaban atas pertanyaan Anda</p>
+            
+            <div class="faq-container" data-aos="fade-up" data-aos-delay="200">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Bagaimana cara berlangganan OshiLive48?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Anda bisa memilih paket membership di halaman Membership, kemudian melakukan pembayaran melalui metode yang tersedia. Setelah pembayaran dikonfirmasi, akun Anda akan langsung aktif.</p>
+                    </div>
+                </div>
+                <!-- Tambahkan FAQ lainnya -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Apa Kata <span>Mereka?</span></h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Testimoni dari member kami</p>
+            
+            <div class="testimonial-slider" data-aos="fade-up" data-aos-delay="200">
+                <div class="swiper testimonial-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-header">
+                                    <img src="assets/images/testimonials/user1.jpg" alt="User">
+                                    <div class="user-info">
+                                        <h4>Rina Chan</h4>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="testimonial-text">"Kualitas streaming sangat bagus, tidak buffering sama sekali. Sangat worth it untuk harga segini!"</p>
+                            </div>
+                        </div>
+                        <!-- Tambahkan testimonial lainnya -->
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2023 OshiLive48. Tidak berafiliasi dengan JKT48.</p>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo">
+                        <img src="assets/images/logo-white.png" alt="OshiLive48">
+                        <span>OshiLive48</span>
+                    </div>
+                    <p>Platform streaming eksklusif untuk pertunjukan Theater JKT48 dengan kualitas premium.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#schedule">Schedule</a></li>
+                        <li><a href="#membership">Membership</a></li>
+                        <li><a href="#payments">Payments</a></li>
+                        <li><a href="#primes">Primes</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe untuk mendapatkan update terbaru</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email Address">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 OshiLive48. Tidak berafiliasi dengan JKT48. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" data-aos="fade-up" data-aos-delay="400">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/css/script.js"></script>
 </body>
