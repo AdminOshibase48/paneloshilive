@@ -1,55 +1,114 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>OshiLive48</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OshiLive48 - Live Streaming JKT48</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body class="dark">
-
-  <!-- HEADER -->
-  <header class="main-header">
-    <div class="container header-flex">
-      <div class="logo-area">
-        <img src="assets/img/logo.png" alt="Logo" class="logo-img">
-        <h1 class="logo-text">OshiLive48</h1>
-      </div>
-      <a href="#" class="back-link">← Kembali ke Oshibase48</a>
-    </div>
-  </header>
-
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <div class="container hero-content">
-      <div class="hero-text">
-        <h2>Streaming Event & Teater <span class="highlight">JKT48</span></h2>
-        <p>Dibuat oleh fans, untuk fans. Saksikan acara favoritmu langsung dari rumah!</p>
-        <div class="hero-buttons">
-          <a href="#event" class="btn primary">🎟️ Beli Streaming</a>
-          <a href="#jadwal" class="btn secondary">📅 Lihat Jadwal</a>
+<body>
+    <header>
+        <div class="logo">
+            <h1>OshiLive48</h1>
         </div>
-      </div>
-      <div class="hero-image">
-        <img src="assets/img/fullhouse.jpg" alt="Full House JKT48">
-      </div>
-    </div>
-  </section>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#live">Live</a></li>
+                <li><a href="#jadwal">Jadwal</a></li>
+                <li><a href="#member">Member</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- HIGHLIGHT -->
-  <section class="highlight-section" id="event">
-    <div class="container">
-      <h3>🪄 Highlight Event Terdekat</h3>
-      <img src="assets/img/fullhouse.jpg" alt="Event Highlight" class="highlight-img">
-    </div>
-  </section>
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h2>Live Streaming JKT48</h2>
+                <p>Nikmati live streaming JKT48 setiap hari</p>
+                <a href="#live" class="btn">Tonton Sekarang</a>
+            </div>
+        </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 OshiLive48. All Rights Reserved.</p>
-    </div>
-  </footer>
+        <section id="live">
+            <h2 class="section-title">Live Streaming</h2>
+            <div class="stream-container">
+                <div class="stream-player">
+                    <!-- Player akan ditempatkan di sini -->
+                    <iframe src="https://www.youtube.com/embed/live_stream?channel=YOUR_CHANNEL_ID" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="chat-container">
+                    <!-- Chat akan ditempatkan di sini -->
+                    <iframe src="https://www.youtube.com/live_chat?v=VIDEO_ID&embed_domain=yourdomain.com" frameborder="0"></iframe>
+                </div>
+            </div>
+        </section>
 
+        <section id="jadwal">
+            <h2 class="section-title">Jadwal Live</h2>
+            <div class="schedule-container">
+                <div class="schedule-day">
+                    <h3>Senin</h3>
+                    <ul>
+                        <li>19:00 - Theater Performance</li>
+                        <li>21:00 - Member Live</li>
+                    </ul>
+                </div>
+                <div class="schedule-day">
+                    <h3>Selasa</h3>
+                    <ul>
+                        <li>19:00 - Theater Performance</li>
+                        <li>21:00 - Member Live</li>
+                    </ul>
+                </div>
+                <!-- Tambahkan hari lainnya -->
+            </div>
+        </section>
+
+        <section id="member">
+            <h2 class="section-title">Member</h2>
+            <div class="member-grid">
+                <!-- Contoh member -->
+                <div class="member-card">
+                    <img src="assets/images/member1.jpg" alt="Member 1">
+                    <h3>Nama Member</h3>
+                    <p>Generasi X</p>
+                </div>
+                <!-- Tambahkan member lainnya -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Tentang OshiLive48</h3>
+                <p>OshiLive48 adalah platform streaming tidak resmi untuk menonton live JKT48.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Link Cepat</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#live">Live</a></li>
+                    <li><a href="#jadwal">Jadwal</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sosial Media</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 OshiLive48. Tidak berafiliasi dengan JKT48.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
