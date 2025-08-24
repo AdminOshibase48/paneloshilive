@@ -16,6 +16,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const scheduleTable = document.getElementById('schedule-table');
     const membershipTable = document.getElementById('membership-table');
     
+    // Pastikan hanya login screen yang ditampilkan pertama kali
+    loginScreen.classList.add('active');
+    adminDashboard.classList.remove('active');
+    
     // Login functionality
     loginForm.addEventListener('submit', function(e) {
         e.preventDefault();
