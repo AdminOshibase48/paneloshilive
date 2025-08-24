@@ -17,8 +17,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const membershipTable = document.getElementById('membership-table');
     
     // Pastikan hanya login screen yang ditampilkan pertama kali
-    loginScreen.classList.add('active');
-    adminDashboard.classList.remove('active');
+    function initScreens() {
+        loginScreen.classList.add('active');
+        adminDashboard.classList.remove('active');
+        
+        // Reset forms
+        document.getElementById('username').value = '';
+        document.getElementById('password').value = '';
+    }
+    
+    initScreens();
     
     // Login functionality
     loginForm.addEventListener('submit', function(e) {
@@ -26,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
         
-        // Simple validation (in real app, you'd verify with server)
+        // Simple validation
         if (username === 'admin' && password === 'password') {
             loginScreen.classList.remove('active');
             adminDashboard.classList.add('active');
@@ -39,10 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Logout functionality
     logoutBtn.addEventListener('click', function() {
         if (confirm('Apakah Anda yakin ingin keluar?')) {
-            loginScreen.classList.add('active');
-            adminDashboard.classList.remove('active');
-            document.getElementById('username').value = '';
-            document.getElementById('password').value = '';
+            initScreens();
         }
     });
     
