@@ -23,21 +23,23 @@ document.addEventListener('DOMContentLoaded', function() {
         const password = document.getElementById('password').value;
         
         // Simple validation (in real app, you'd verify with server)
-        if (username && password) {
+        if (username === 'admin' && password === 'password') {
             loginScreen.classList.remove('active');
             adminDashboard.classList.add('active');
             document.getElementById('user-name').textContent = username;
         } else {
-            alert('Silakan isi username dan password');
+            alert('Username atau password salah! Coba: username: admin, password: password');
         }
     });
     
     // Logout functionality
     logoutBtn.addEventListener('click', function() {
-        loginScreen.classList.add('active');
-        adminDashboard.classList.remove('active');
-        document.getElementById('username').value = '';
-        document.getElementById('password').value = '';
+        if (confirm('Apakah Anda yakin ingin keluar?')) {
+            loginScreen.classList.add('active');
+            adminDashboard.classList.remove('active');
+            document.getElementById('username').value = '';
+            document.getElementById('password').value = '';
+        }
     });
     
     // Menu navigation
@@ -60,6 +62,10 @@ document.addEventListener('DOMContentLoaded', function() {
         modalBackdrop.style.display = 'flex';
         scheduleForm.classList.add('active');
         membershipForm.classList.remove('active');
+        
+        // Set today's date as default
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('event-date').value = today;
     });
     
     // Open modal for adding member
@@ -68,6 +74,10 @@ document.addEventListener('DOMContentLoaded', function() {
         modalBackdrop.style.display = 'flex';
         membershipForm.classList.add('active');
         scheduleForm.classList.remove('active');
+        
+        // Set today's date as default
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('join-date').value = today;
     });
     
     // Close modal
@@ -79,6 +89,13 @@ document.addEventListener('DOMContentLoaded', function() {
     
     closeModalBtn.addEventListener('click', closeModal);
     cancelBtns.forEach(btn => btn.addEventListener('click', closeModal));
+    
+    // Close modal when clicking outside
+    modalBackdrop.addEventListener('click', function(e) {
+        if (e.target === modalBackdrop) {
+            closeModal();
+        }
+    });
     
     // Handle schedule form submission
     scheduleForm.addEventListener('submit', function(e) {
@@ -186,4 +203,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     initializeTableListeners();
+    
+    // Add keyboard event listener for Escape key to close modal
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modalBackdrop.style.display === 'flex') {
+            closeModal();
+        }
+    });
 });
