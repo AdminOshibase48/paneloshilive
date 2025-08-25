@@ -1,8 +1,20 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Cek apakah user sudah login
+    const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+    const username = sessionStorage.getItem('username');
+    
+    if (!isLoggedIn || isLoggedIn !== 'true') {
+        // Jika belum login, redirect ke halaman login
+        window.location.href = 'index.html';
+        return;
+    }
+    
+    // Set username di dashboard
+    if (username) {
+        document.getElementById('user-name').textContent = username;
+    }
+    
     // Elements
-    const loginScreen = document.getElementById('login-screen');
-    const adminDashboard = document.getElementById('admin-dashboard');
-    const loginForm = document.getElementById('login-form');
     const logoutBtn = document.getElementById('logout-btn');
     const menuItems = document.querySelectorAll('.menu-item');
     const contentSections = document.querySelectorAll('.content-section');
@@ -16,38 +28,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const scheduleTable = document.getElementById('schedule-table');
     const membershipTable = document.getElementById('membership-table');
     
-    // Pastikan hanya login screen yang ditampilkan pertama kali
-    function initScreens() {
-        loginScreen.classList.add('active');
-        adminDashboard.classList.remove('active');
-        
-        // Reset forms
-        document.getElementById('username').value = '';
-        document.getElementById('password').value = '';
-    }
-    
-    initScreens();
-    
-    // Login functionality
-    loginForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
-        
-        // Simple validation
-        if (username === 'admin' && password === 'password') {
-            loginScreen.classList.remove('active');
-            adminDashboard.classList.add('active');
-            document.getElementById('user-name').textContent = username;
-        } else {
-            alert('Username atau password salah! Coba: username: admin, password: password');
-        }
-    });
-    
     // Logout functionality
     logoutBtn.addEventListener('click', function() {
         if (confirm('Apakah Anda yakin ingin keluar?')) {
-            initScreens();
+            // Hapus status login
+            sessionStorage.removeItem('isLoggedIn');
+            sessionStorage.removeItem('username');
+            
+            // Redirect ke halaman login
+            window.location.href = 'index.html';
         }
     });
     
