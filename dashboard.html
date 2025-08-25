@@ -38,7 +38,7 @@
                             <i class="fas fa-calendar"></i>
                         </div>
                         <div class="stat-info">
-                            <h3>25</h3>
+                            <h3 id="total-schedules">0</h3>
                             <p>Jadwal Aktif</p>
                         </div>
                     </div>
@@ -47,7 +47,7 @@
                             <i class="fas fa-users"></i>
                         </div>
                         <div class="stat-info">
-                            <h3>148</h3>
+                            <h3 id="total-members">0</h3>
                             <p>Total Member</p>
                         </div>
                     </div>
@@ -81,26 +81,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>15 Agustus 2023</td>
-                                <td>Live Performance</td>
-                                <td>Studio 1</td>
-                                <td>
-                                    <button class="edit-btn"><i class="fas fa-edit"></i></button>
-                                    <button class="delete-btn"><i class="fas fa-trash"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>20 Agustus 2023</td>
-                                <td>Meet & Greet</td>
-                                <td>Hall A</td>
-                                <td>
-                                    <button class="edit-btn"><i class="fas fa-edit"></i></button>
-                                    <button class="delete-btn"><i class="fas fa-trash"></i></button>
-                                </td>
-                            </tr>
+                            <!-- Data akan diisi oleh JavaScript -->
                         </tbody>
                     </table>
                 </div>
@@ -125,28 +106,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Sakura Miyawaki</td>
-                                <td>sakura48</td>
-                                <td><span class="status active">Aktif</span></td>
-                                <td>12 Jan 2023</td>
-                                <td>
-                                    <button class="edit-btn"><i class="fas fa-edit"></i></button>
-                                    <button class="delete-btn"><i class="fas fa-trash"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Yuki Yamada</td>
-                                <td>yuki48</td>
-                                <td><span class="status inactive">Tidak Aktif</span></td>
-                                <td>03 Mar 2023</td>
-                                <td>
-                                    <button class="edit-btn"><i class="fas fa-edit"></i></button>
-                                    <button class="delete-btn"><i class="fas fa-trash"></i></button>
-                                </td>
-                            </tr>
+                            <!-- Data akan diisi oleh JavaScript -->
                         </tbody>
                     </table>
                 </div>
@@ -164,6 +124,7 @@
             <div class="modal-body">
                 <!-- Schedule Form -->
                 <form id="schedule-form" class="modal-form">
+                    <input type="hidden" id="schedule-id">
                     <div class="form-group">
                         <label for="event-date">Tanggal Acara</label>
                         <input type="date" id="event-date" required>
@@ -184,6 +145,7 @@
 
                 <!-- Membership Form -->
                 <form id="membership-form" class="modal-form">
+                    <input type="hidden" id="member-id">
                     <div class="form-group">
                         <label for="member-name">Nama Lengkap</label>
                         <input type="text" id="member-name" placeholder="Nama member" required>
