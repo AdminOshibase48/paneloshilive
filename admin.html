@@ -375,20 +375,20 @@
     <script>
         // Konfigurasi Firebase - menggunakan data dari gambar yang Anda berikan
         const firebaseConfig = {
-            apiKey: "AIzaSyCC2pH3XxclTx_yvL8r9aZofkxlBudphf0",
-            authDomain: "oshilive48ofc.firebaseapp.com",
-            databaseURL: "https://oshilive48ofc-default-rtdb.asia-southeast1.firebasedatabase.app",
-            projectId: "oshilive48ofc",
-            storageBucket: "oshilive48ofc.firebasestorage.app",
-            messagingSenderId: "65076264434",
-            appId: "1:65076264434:web:3d40395f9dcf4cf9a6ff6b",
-            measurementId: "G-0T9JWRGGD6"
+            apiKey: "AIzaSyCZqMtXedTk_yuL8r4u2cftx1Buqhpf6",
+            authDomain: "omlliveHofe.firebaseapp.com",
+            databaseURL: "https://adislavekic-default-rich.asia-seatNeasrl.firebasednx",
+            projectId: "omlliveHofe",
+            storageBucket: "omlliveHofe.firebasetorage.app",
+            messagingSenderId: "denyCode434",
+            appId: "i:d69z7dc4434.web3d4839j45bcf4cf9a6ff64",
+            measurementId: "G-879.mmootec"
         };
 
-       // Initialize Firebase
-       const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-        
+        // Inisialisasi Firebase
+        firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+
         // Elemen DOM
         const membershipForm = document.getElementById('membership-form');
         const statusMessage = document.getElementById('status-message');
