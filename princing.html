@@ -3,84 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paket Membership - OshiLive48</title>
-    <link rel="icon" href="img/logo.png" type="image/png">
-    <link rel="stylesheet" href="assets/css/pricing.css">
+    <title>OSHILIVE48 - Official Streaming</title>
+    <link rel="stylesheet" href="assets/css/princing.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navbar Baru -->
+    <!-- Navbar -->
     <nav class="navbar">
-        <div class="container">
-            <div class="logo">
-                <img src="img/logo.png" alt="OshiLive48">
-                <span>OshiLive48</span>
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#">OSHILIVE48</a>
             </div>
-            <ul class="nav-links">
-                <li><a href="index.html"><i class="fas fa-Home"></i> Home</a></li>
-                    <li><a href="schedule.html"><i class="fas fa-calendar-alt"></i> Schedule</a></li>
-                    <li><a href="#princing" class="active"><i class="fas fa-crown"></i> Membership</a></li>
-                    <li><a href="#faq"><i class="fas fa-question-circle"></i> FAQ</a></li>
-                    <li><a href="tentang.html"><i class="fas fa-question-circle"></i> About</a></li>
-                </ul>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#" class="nav-link active">Home</a>
+                <a href="#" class="nav-link">Schedule</a>
+                <a href="#" class="nav-link">Membership</a>
+                <a href="#" class="nav-link">FAQ</a>
+                <a href="#" class="nav-link">About</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
     </nav>
 
-    <div class="pricing-header">
-        <h1><i class="fas fa-crown"></i> PAKET MEMBERSHIP</h1>
-        <p>Pilih paket yang sesuai dengan kebutuhan Anda</p>
-    </div>
-
-    <div class="pricing-container">
-        <!-- Paket Basic -->
-        <div class="pricing-plan">
-            <div class="plan-header">
-                <h3>BASIC</h3>
-                <div class="price">Rp50.000<span>/bulan</span></div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content fade-in">
+            <h1>OSHILIVE48 <span>OFFICIAL STREAMING</span></h1>
+            <p>Nikmati streaming pertunjukan Theater JKT48 dengan kualitas premium dan harga terjangkau.</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn btn-primary">Lihat Jadwal</a>
+                <a href="#" class="btn btn-secondary">Gabung Member</a>
             </div>
-            <ul class="plan-features">
-                <li><i class="fas fa-check"></i> Akses 1 Device</li>
-                <li><i class="fas fa-check"></i> Kualitas HD</li>
-                <li><i class="fas fa-times"></i> Rekaman Show</li>
-            </ul>
-            <button class="plan-button" onclick="selectPlan('basic')">Pilih Paket</button>
         </div>
+    </section>
 
-        <!-- Paket Premium -->
-        <div class="pricing-plan popular">
-            <div class="popular-badge">POPULER</div>
-            <div class="plan-header">
-                <h3>PREMIUM</h3>
-                <div class="price">Rp100.000<span>/bulan</span></div>
+    <!-- Membership Section -->
+    <section class="membership">
+        <h2 class="section-title fade-in">Pilihan Membership</h2>
+        <div class="membership-container" id="membership-container">
+            <!-- Data membership akan diisi melalui admin panel -->
+            <div class="membership-card fade-in">
+                <div class="membership-image">
+                    <img src="https://via.placeholder.com/300x200/ff6699/ffffff?text=Basic" alt="Membership Basic">
+                </div>
+                <div class="membership-details">
+                    <h3>Basic</h3>
+                    <p class="price">Rp 50.000<span>/bulan</span></p>
+                    <ul>
+                        <li>Streaming kualitas standar</li>
+                        <li>Akses ke archive 30 hari terakhir</li>
+                        <li>1 device aktif</li>
+                    </ul>
+                    <a href="#" class="btn btn-membership">Pilih Paket</a>
+                </div>
             </div>
-            <ul class="plan-features">
-                <li><i class="fas fa-check"></i> Akses 2 Device</li>
-                <li><i class="fas fa-check"></i> Kualitas FHD</li>
-                <li><i class="fas fa-check"></i> Rekaman Show</li>
-            </ul>
-            <button class="plan-button" onclick="selectPlan('premium')">Pilih Paket</button>
-        </div>
-
-        <!-- Paket VIP -->
-        <div class="pricing-plan">
-            <div class="plan-header">
-                <h3>VIP</h3>
-                <div class="price">Rp200.000<span>/bulan</span></div>
+            
+            <div class="membership-card fade-in">
+                <div class="membership-image">
+                    <img src="https://via.placeholder.com/300x200/6633ff/ffffff?text=Premium" alt="Membership Premium">
+                </div>
+                <div class="membership-details">
+                    <h3>Premium</h3>
+                    <p class="price">Rp 100.000<span>/bulan</span></p>
+                    <ul>
+                        <li>Streaming kualitas HD</li>
+                        <li>Akses ke seluruh archive</li>
+                        <li>3 device aktif</li>
+                        <li>Early booking ticket</li>
+                    </ul>
+                    <a href="#" class="btn btn-membership">Pilih Paket</a>
+                </div>
             </div>
-            <ul class="plan-features">
-                <li><i class="fas fa-check"></i> Akses 4 Device</li>
-                <li><i class="fas fa-check"></i> Kualitas 4K</li>
-                <li><i class="fas fa-check"></i> Bonus Content</li>
-            </ul>
-            <button class="plan-button" onclick="selectPlan('vip')">Pilih Paket</button>
+            
+            <div class="membership-card fade-in">
+                <div class="membership-image">
+                    <img src="https://via.placeholder.com/300x200/33cc33/ffffff?text=VIP" alt="Membership VIP">
+                </div>
+                <div class="membership-details">
+                    <h3>VIP</h3>
+                    <p class="price">Rp 200.000<span>/bulan</span></p>
+                    <ul>
+                        <li>Streaming kualitas 4K</li>
+                        <li>Akses ke seluruh archive + behind the scenes</li>
+                        <li>5 device aktif</li>
+                        <li>Priority booking ticket</li>
+                        <li>Exclusive merchandise discount</li>
+                    </ul>
+                    <a href="#" class="btn btn-membership">Pilih Paket</a>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <script>
-        function selectPlan(plan) {
-            localStorage.setItem('selectedPlan', plan);
-            window.location.href = "payment.html";
-        }
-    </script>
+    <!-- Schedule Section -->
+    <section class="schedule">
+        <h2 class="section-title fade-in">Jadwal Streaming</h2>
+        <div class="schedule-container fade-in">
+            <div class="schedule-item">
+                <div class="date">
+                    <span class="day">15</span>
+                    <span class="month">Sept</span>
+                </div>
+                <div class="info">
+                    <h3>Team J - "Pajama Drive"</h3>
+                    <p>19:00 WIB • Theater JKT48</p>
+                </div>
+                <a href="#" class="btn-reminder">Set Reminder</a>
+            </div>
+            
+            <div class="schedule-item">
+                <div class="date">
+                    <span class="day">17</span>
+                    <span class="month">Sept</span>
+                </div>
+                <div class="info">
+                    <h3>Team KIII - "Saka Agari"</h3>
+                    <p>19:00 WIB • Theater JKT48</p>
+                </div>
+                <a href="#" class="btn-reminder">Set Reminder</a>
+            </div>
+            
+            <div class="schedule-item">
+                <div class="date">
+                    <span class="day">20</span>
+                    <span class="month">Sept</span>
+                </div>
+                <div class="info">
+                    <h3>Team T - "Te wo Tsunaginagara"</h3>
+                    <p>14:00 WIB • Theater JKT48</p>
+                </div>
+                <a href="#" class="btn-reminder">Set Reminder</a>
+            </div>
+        </div>
+        <div class="schedule-button">
+            <a href="#" class="btn btn-primary">Lihat Jadwal Lengkap</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>OSHILIVE48</h3>
+                <p>Platform streaming resmi untuk pertunjukan Theater JKT48 dengan kualitas premium.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Tautan Cepat</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Schedule</a></li>
+                    <li><a href="#">Membership</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Kontak</h3>
+                <p>Email: info@oshilive48.com</p>
+                <p>Telepon: (021) 1234-5678</p>
+                <div class="socials">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 OSHILIVE48. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="asstes/css/script.js"></script>
 </body>
 </html>
