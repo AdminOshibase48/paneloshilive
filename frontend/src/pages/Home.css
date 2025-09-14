@@ -1,0 +1,268 @@
+.home {
+  padding-top: 80px;
+}
+
+/* Hero Section */
+.hero {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1 {
+  font-size: 4rem;
+  margin-bottom: 10px;
+  color: var(--dark);
+  line-height: 1.1;
+}
+
+.hero-text h1 span {
+  color: var(--primary);
+}
+
+.hero-text h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  color: var(--dark-gray);
+  margin-bottom: 30px;
+  max-width: 500px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.hero-image {
+  flex: 1;
+  text-align: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.floating {
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Packages Section */
+.packages {
+  padding: 100px 0;
+  background-color: var(--light);
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 2.5rem;
+  color: var(--dark);
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.section-title span {
+  color: var(--primary);
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+}
+
+.section-subtitle {
+  text-align: center;
+  margin-bottom: 50px;
+  color: var(--gray);
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.package-card {
+  background-color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  position: relative;
+}
+
+.package-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-dark);
+}
+
+.package-card.popular {
+  border: 2px solid var(--primary);
+  transform: scale(1.05);
+}
+
+.popular-badge {
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  background-color: var(--primary);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  z-index: 1;
+}
+
+.package-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.package-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.package-content {
+  padding: 30px;
+}
+
+.package-content h3 {
+  font-size: 1.5rem;
+  color: var(--dark);
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.price {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 30px;
+}
+
+.price span {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--gray);
+}
+
+.features {
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+.features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+}
+
+.features li i {
+  color: var(--success);
+}
+
+.package-content .btn {
+  width: 100%;
+  text-align: center;
+}
+
+/* FAQ Section */
+.faq {
+  padding: 100px 0;
+  background-color: white;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  margin-bottom: 30px;
+  padding: 30px;
+  background-color: var(--light);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.faq-item h3 {
+  font-size: 1.2rem;
+  color: var(--dark);
+  margin-bottom: 15px;
+}
+
+.faq-item p {
+  color: var(--dark-gray);
+  line-height: 1.6;
+}
+
+.error-message {
+  text-align: center;
+  color: var(--danger);
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #fee;
+  border-radius: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .hero-text h1 {
+    font-size: 3rem;
+  }
+  
+  .hero-buttons {
+    justify-content: center;
+  }
+  
+  .packages-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .package-card.popular {
+    transform: none;
+  }
+}
