@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+code {
+  font-family: 'Courier New', monospace;
+}
+
+:root {
+  --primary: #e74c3c;
+  --primary-dark: #c0392b;
+  --primary-light: #ff6b6b;
+  --secondary: #3498db;
+  --accent: #f1c40f;
+  --dark: #2c3e50;
+  --light: #ecf0f1;
+  --lighter: #ffffff;
+  --gray: #95a5a6;
+  --dark-gray: #7f8c8d;
+  --success: #2ecc71;
+  --danger: #e74c3c;
+  --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --shadow-dark: 0 8px 30px rgba(0, 0, 0, 0.2);
+  --transition: all 0.3s ease;
+}
